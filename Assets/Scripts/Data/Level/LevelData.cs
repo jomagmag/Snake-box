@@ -15,7 +15,7 @@ namespace Snake_box
         {
             SingleLevelData result = SingleLevelDatas.SingleOrDefault(x => x.LevelType == levelType);
             if (result == null)
-                throw new ArgumentException("Нет данных для уровня " + levelType);
+                throw new ArgumentException("РќРµС‚ РґР°РЅРЅС‹С… РґР»СЏ СѓСЂРѕРІРЅСЏ " + levelType);
             else
                 return result;
         }
