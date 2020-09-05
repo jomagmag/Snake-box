@@ -9,12 +9,13 @@ namespace Snake_box
         protected bool _isActive;
         private float rechargeTime;
         private float rechargeDelay;
+        private BaseTrapsData _data;
 
 
         public BaseTraps(BaseTrapsData data)
         {
+            _data = data;
             rechargeDelay = data.ReloadTime;
-            _gameObject = GameObject.Instantiate(data.Prefab, data.SpawnPos);
         }
         
         #region IExecute
@@ -45,6 +46,17 @@ namespace Snake_box
         #region ITrap
 
         public abstract void Active();
+
+        public void Spawn()
+        {
+            _gameObject = GameObject.Instantiate(_data.Prefab);
+            _gameObject.transform.position = GameObject.FindGameObjectWithTag(TagManager.GetTag(TagType.GrenadeLauncherPos)).transform.position;
+        }
+
+        public void Destroy()
+        {
+            Object.Destroy(_gameObject);
+        }
 
 
         #endregion

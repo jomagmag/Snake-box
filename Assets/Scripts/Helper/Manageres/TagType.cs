@@ -14,6 +14,7 @@
         PanelEndLevel = 9,
         Enemy  = 10,
         BonusPoint = 11,
-        TurretPoint = 12
+        TurretPoint = 12,
+        GrenadeLauncherPos = 13
     }
 }

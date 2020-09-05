@@ -34,6 +34,14 @@
               </e>
             </e>
           </e>
+          <e p="Scripts" t="Include">
+            <e p="BusDemoCharacter.cs" t="Include" />
+          </e>
+        </e>
+        <e p="PolygonParticles" t="Include">
+          <e p="Materials" t="Include">
+            <e p="SHARED BY LUXURYPANDA.txt" t="Include" />
+          </e>
         </e>
         <e p="Resources" t="Include">
           <e p="GUI" t="Include">
@@ -216,7 +224,9 @@
             </e>
             <e p="FlyingIcon.cs" t="Include" />
             <e p="Interfaces" t="Include">
+              <e p="IDamageAddressee.cs" t="Include" />
               <e p="IEnemy.cs" t="Include" />
+              <e p="IModifiersSet.cs" t="Include" />
               <e p="ITrap.cs" t="Include" />
             </e>
             <e p="MainBuild" t="Include">
@@ -242,7 +252,6 @@
             </e>
             <e p="Turrets" t="Include">
               <e p="Abstract" t="Include">
-                <e p="IDamageAddressee.cs" t="Include" />
                 <e p="TurretBaseAbs.cs" t="Include" />
                 <e p="TurretInitializer.cs" t="Include" />
               </e>
@@ -280,6 +289,9 @@
               <e p="CameraServices.cs" t="Include" />
             </e>
             <e p="FlyingIconsService.cs" t="Include" />
+            <e p="InputService" t="Include">
+              <e p="InputService.cs" t="Include" />
+            </e>
             <e p="LevelService" t="Include">
               <e p="LevelLoadService.cs" t="Include" />
               <e p="LevelService.cs" t="Include" />
@@ -308,6 +320,7 @@
             <e p="EnemyType.cs" t="Include" />
             <e p="GameObjectType.cs" t="Include" />
             <e p="LevelType.cs" t="Include" />
+            <e p="TrapType.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
             <e p="BarUI" t="Include">
@@ -332,6 +345,17 @@
               <e p="ScreenElementType.cs" t="Include" />
               <e p="ScreenType.cs" t="Include" />
             </e>
+          </e>
+        </e>
+        <e p="SimpleApocalypse" t="Include">
+          <e p="_Materials" t="Include">
+            <e p="UnlitVertexColour_Alpha.shader" t="Include" />
+          </e>
+          <e p="ReadMe.txt" t="Include" />
+        </e>
+        <e p="SimpleFX" t="Include">
+          <e p="Materials" t="Include">
+            <e p="UnlitVertexColour_Alpha.shader" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">

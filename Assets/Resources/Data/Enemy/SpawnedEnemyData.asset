@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: SpawnedEnemyData
   m_EditorClassIdentifier: 
   ArmorType: 2
-  Prefab: {fileID: 5058968977680414830, guid: ae92a8340f4b11c4e91c1947d523534a, type: 3}
+  Prefab: {fileID: 1639909596336042, guid: 47dd683167a3af44b89c16183cd67416, type: 3}
   Hp: 1
   Speed: 1
   Damage: 1
-  SpawnRadius: 10
   SizePack: 0
   PackValue: 0
   MeleeHitRange: 1
+  HitCooldown: 0
+  KillReward: 0
