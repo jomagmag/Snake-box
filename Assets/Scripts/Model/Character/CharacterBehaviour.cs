@@ -49,6 +49,7 @@ namespace Snake_box
             _baseSnakeHp = _characterData.Hp;
             _damage = _characterData.Damage;
             _speed = _characterData.Speed;
+            _angularSpeed = _characterData.AngularSpeed;
             _snakeArmorGeneration = _characterData.RegenerationArmor;
             _ramCooldown = _characterData.RamCooldown;
             _pointsTurret = new Queue<GameObject>();
@@ -142,7 +143,8 @@ namespace Snake_box
 
         public void ConstantMove()//постоянное движение
         {
-            transform.rotation = _direction.ToQuaternion();
+            transform.rotation = Quaternion.Lerp(transform.rotation, _direction.ToQuaternion(), _timeService.DeltaTime()*_angularSpeed);
+            Debug.Log(transform.rotation);
             transform.position += transform.forward * ((_speed /*- (_positions.Count * _slowSnake)*/) * _timeService.DeltaTime());
         }
 
