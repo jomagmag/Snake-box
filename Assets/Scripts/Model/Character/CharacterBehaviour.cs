@@ -144,7 +144,6 @@ namespace Snake_box
         public void ConstantMove()//постоянное движение
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, _direction.ToQuaternion(), _timeService.DeltaTime()*_angularSpeed);
-            Debug.Log(transform.rotation);
             transform.position += transform.forward * ((_speed /*- (_positions.Count * _slowSnake)*/) * _timeService.DeltaTime());
         }
 
