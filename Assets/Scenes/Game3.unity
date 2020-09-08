@@ -12080,6 +12080,7 @@ GameObject:
   - component: {fileID: 893956919}
   - component: {fileID: 893956918}
   - component: {fileID: 893956917}
+  - component: {fileID: 893956920}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -12146,12 +12147,33 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 893956916}
   m_LocalRotation: {x: 0.5681311, y: 0, z: 0, w: 0.82293814}
-  m_LocalPosition: {x: 0, y: 233.9, z: -83.7}
+  m_LocalPosition: {x: 6.7, y: 94.25, z: -39.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 69.24, y: 0, z: 0}
+--- !u!114 &893956920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893956916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 965d9bbd06ab37947ae9e77e93a09c21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  distance: 0
+  FindPlayer: 0
+  Range: {x: 0, y: 20, z: -10}
+  turret1: {fileID: 0}
+  turret2: {fileID: 0}
+  turret3: {fileID: 0}
+  turret4: {fileID: 0}
+  point: []
 --- !u!1001 &900778562
 PrefabInstance:
   m_ObjectHideFlags: 0

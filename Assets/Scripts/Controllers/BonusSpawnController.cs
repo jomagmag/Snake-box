@@ -32,7 +32,7 @@ namespace Snake_box
         {
             int random = Random.Range(0, _bonuses._bonusList.Count);
             int point = Random.Range(0, _spawnPoints.Length);
-            _bonuses._bonusList[3].Spawn(_spawnPoints[21].transform.position);         ///загружается 3(random) бонус в 5(point) точке   
+           // _bonuses._bonusList[3].Spawn(_spawnPoints[21].transform.position);         ///загружается 3(random) бонус в 5(point) точке   
         }
 
         #endregion

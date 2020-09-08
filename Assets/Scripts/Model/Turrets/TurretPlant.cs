@@ -51,10 +51,12 @@ namespace Snake_box
 
             if (localList.Count > 0)
             {
+                Debug.Log("4");
                 List<TurretBaseAbs> turretBaseAbs = new List<TurretBaseAbs>();
 
                 foreach (TurretBaseAbs tba in localList)
                 {
+                    Debug.Log("5");
                     TurretBaseAbs turret2 = Data.Instance.TurretData.TurretPlant.AddAndReturn(buttonsDictionary[keyCode]);
 
                     tba.ReplaceTurret(turret2);

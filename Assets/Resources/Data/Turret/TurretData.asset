@@ -22,7 +22,7 @@ MonoBehaviour:
     ThumbnailPrefab: {fileID: 269974265680797856, guid: 200f07bd5d78bcd4cb26d25e63b7b204,
       type: 3}
     PreferableEnemy: 1
-    TurretPrefab: {fileID: 1904041790429094, guid: 027cd57972e60824ca74f44e0d80ea9a,
+    TurretPrefab: {fileID: 1904041790429094, guid: ffcbc185c714eab4d97a76c3fb20c75c,
       type: 3}
     ArmorPiercing: 2
     FirePointHierarchy: TurretShift/FirePoint
@@ -100,7 +100,7 @@ MonoBehaviour:
     ThumbnailPrefab: {fileID: 269974265680797856, guid: 200f07bd5d78bcd4cb26d25e63b7b204,
       type: 3}
     PreferableEnemy: 2
-    TurretPrefab: {fileID: 1467590972069000, guid: d91ede30c57f9e64cb6e7ac51e28ff35,
+    TurretPrefab: {fileID: 1467590972069000, guid: 7df9bea005a765442a470fb1d63205bc,
       type: 3}
     ArmorPiercing: 0
     FirePointHierarchy: TurretShift/FirePoint
@@ -199,7 +199,7 @@ MonoBehaviour:
     ThumbnailPrefab: {fileID: 269974265680797856, guid: 200f07bd5d78bcd4cb26d25e63b7b204,
       type: 3}
     PreferableEnemy: 4
-    TurretPrefab: {fileID: 1274019000965958, guid: af169be12f376ce46a3e6b4bee8b8ffe,
+    TurretPrefab: {fileID: 1274019000965958, guid: ef474b71ec2f39e4db089f4b2e5555dd,
       type: 3}
     ArmorPiercing: 0
     FirePointHierarchy: TurretShift/FirePoint
