@@ -32,45 +32,45 @@ namespace Snake_box
 
         #region UnityMethods
 
-        private void OnEnable()
-        {
-            _headSnake.onClick.AddListener(SnakeHeadButton);
-            _buttonPlus[0].onClick.AddListener(delegate { AddBlock(0); });
-            _buttonPlus[1].onClick.AddListener(delegate { AddBlock(1); });
-            _buttonPlus[2].onClick.AddListener(delegate { AddBlock(2); });
-            _buttonPlus[3].onClick.AddListener(delegate { AddBlock(3); });
-            _buttonTurretsType[0].onClick.AddListener(delegate { AddTurret(0); });
-            _buttonTurretsType[1].onClick.AddListener(delegate { AddTurret(1); });
-            _buttonTurretsType[2].onClick.AddListener(delegate { AddTurret(2); });
-            _buttonTurretsType[3].onClick.AddListener(delegate { AddTurret(3); });
-            _mainMenu.onClick.AddListener(delegate { SetPanelEndLevelActive(false); ScreenInterface.GetInstance().Execute(ScreenType.TestMenu); });
-            _reset.onClick.AddListener(Services.Instance.LevelLoadService.ReloadLevel);
-            _pause.onClick.AddListener(Pause);
-        }
+        //private void OnEnable()
+        //{
+        //    _headSnake.onClick.AddListener(SnakeHeadButton);
+        //    _buttonPlus[0].onClick.AddListener(delegate { AddBlock(0); });
+        //    _buttonPlus[1].onClick.AddListener(delegate { AddBlock(1); });
+        //    _buttonPlus[2].onClick.AddListener(delegate { AddBlock(2); });
+        //    _buttonPlus[3].onClick.AddListener(delegate { AddBlock(3); });
+        //    _buttonTurretsType[0].onClick.AddListener(delegate { AddTurret(0); });
+        //    _buttonTurretsType[1].onClick.AddListener(delegate { AddTurret(1); });
+        //    _buttonTurretsType[2].onClick.AddListener(delegate { AddTurret(2); });
+        //    _buttonTurretsType[3].onClick.AddListener(delegate { AddTurret(3); });
+        //    _mainMenu.onClick.AddListener(delegate { SetPanelEndLevelActive(false); ScreenInterface.GetInstance().Execute(ScreenType.TestMenu); });
+        //    _reset.onClick.AddListener(Services.Instance.LevelLoadService.ReloadLevel);
+        //    _pause.onClick.AddListener(Pause);
+        //}
 
-        private void OnDisable()
-        {
-            _headSnake.onClick.RemoveListener(SnakeHeadButton);
-            _buttonPlus[0].onClick.RemoveListener(delegate { AddBlock(0); });
-            _buttonPlus[1].onClick.RemoveListener(delegate { AddBlock(1); });
-            _buttonPlus[2].onClick.RemoveListener(delegate { AddBlock(2); });
-            _buttonPlus[3].onClick.RemoveListener(delegate { AddBlock(3); });
-            _buttonTurretsType[0].onClick.RemoveListener(delegate { AddTurret(0); });
-            _buttonTurretsType[1].onClick.RemoveListener(delegate { AddTurret(1); });
-            _buttonTurretsType[2].onClick.RemoveListener(delegate { AddTurret(2); });
-            _buttonTurretsType[3].onClick.RemoveListener(delegate { AddTurret(3); });
-            _mainMenu.onClick.RemoveListener(delegate { SetPanelEndLevelActive(false); ScreenInterface.GetInstance().Execute(ScreenType.TestMenu); });
-            _reset.onClick.RemoveListener(Services.Instance.LevelLoadService.ReloadLevel);
-            _pause.onClick.RemoveListener(Pause);
-        }
+        //private void OnDisable()
+        //{
+        //    _headSnake.onClick.RemoveListener(SnakeHeadButton);
+        //    _buttonPlus[0].onClick.RemoveListener(delegate { AddBlock(0); });
+        //    _buttonPlus[1].onClick.RemoveListener(delegate { AddBlock(1); });
+        //    _buttonPlus[2].onClick.RemoveListener(delegate { AddBlock(2); });
+        //    _buttonPlus[3].onClick.RemoveListener(delegate { AddBlock(3); });
+        //    _buttonTurretsType[0].onClick.RemoveListener(delegate { AddTurret(0); });
+        //    _buttonTurretsType[1].onClick.RemoveListener(delegate { AddTurret(1); });
+        //    _buttonTurretsType[2].onClick.RemoveListener(delegate { AddTurret(2); });
+        //    _buttonTurretsType[3].onClick.RemoveListener(delegate { AddTurret(3); });
+        //    _mainMenu.onClick.RemoveListener(delegate { SetPanelEndLevelActive(false); ScreenInterface.GetInstance().Execute(ScreenType.TestMenu); });
+        //    _reset.onClick.RemoveListener(Services.Instance.LevelLoadService.ReloadLevel);
+        //    _pause.onClick.RemoveListener(Pause);
+        //}
 
-        private void Update()
-        {
-            _worldCoins.GetComponent<TextMeshProUGUI>().text = Wallet.CountWorldCoins().ToString();
-            _localCoins.GetComponent<TextMeshProUGUI>().text = Wallet.CountLocalCoins().ToString();
-            //Bar.ShowCount(_hpBar, _characterBehaviour.CurrentSnakeHp, _characterBehaviour.BaseSnakeHp, Color.green, Color.red);
-            //Bar.ShowCount(_forceFieldBar, _characterBehaviour.CurrentSnakeArmor, _characterBehaviour.BaseSnakeArmor, Color.blue, Color.yellow);
-        }
+        //private void Update()
+        //{
+        //    _worldCoins.GetComponent<TextMeshProUGUI>().text = Wallet.CountWorldCoins().ToString();
+        //    _localCoins.GetComponent<TextMeshProUGUI>().text = Wallet.CountLocalCoins().ToString();
+        //    //Bar.ShowCount(_hpBar, _characterBehaviour.CurrentSnakeHp, _characterBehaviour.BaseSnakeHp, Color.green, Color.red);
+        //    //Bar.ShowCount(_forceFieldBar, _characterBehaviour.CurrentSnakeArmor, _characterBehaviour.BaseSnakeArmor, Color.blue, Color.yellow);
+        //}
 
         #endregion
 

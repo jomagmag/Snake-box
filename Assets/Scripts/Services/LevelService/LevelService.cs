@@ -13,6 +13,7 @@ namespace Snake_box
         public List<IEnemy> ActiveEnemies = new List<IEnemy>();
         public List<BaseBonus> ActiveBonus = new List<BaseBonus>();
         public List<BonusBullet> ActiveBonusBullet = new List<BonusBullet>();
+        public List<BasePointer> ActivePoints = new List<BasePointer>();
         private readonly LevelData _levelData;
         public CharacterBehaviour CharacterBehaviour;
         public List <BlockSnake> BlockSnakes= new List< BlockSnake>();
