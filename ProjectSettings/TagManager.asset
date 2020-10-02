@@ -16,6 +16,8 @@ TagManager:
   - Enemy
   - BonusPoint
   - TurretPoint
+  - Test
+  - Canvas
   layers:
   - Default
   - TransparentFX

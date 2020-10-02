@@ -12,6 +12,7 @@ namespace Snake_box
         private KeyCode _up = KeyCode.W;
         private KeyCode _down = KeyCode.S;
         private KeyCode _e = KeyCode.E;
+        private KeyCode _p = KeyCode.P;
 
 
         #endregion
@@ -60,6 +61,15 @@ namespace Snake_box
                 {
                     Data.Instance.TurretData.AddNewWithParent(point);
                 } 
+            }
+            if (Input.GetKeyDown(_p))
+            { 
+                
+                
+                EnemyPointer simplePointer = new EnemyPointer();///создаем указатель для обычного зомби
+                simplePointer.CreatePoint(GameObject.FindGameObjectWithTag("Test").transform);//устанавливаем врага(передаем его трансформ) для указателя
+                //ZombiePointer zombiePointer = new ZombiePointer();///создаем указатель для горящего зомби
+                //zombiePointer.CreatePoint();//устанавливаем врага(передаем его трансформ) для указателя
             }
 #endif
 #if UNITY_IOS || UNITY_ANDROID

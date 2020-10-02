@@ -21,7 +21,8 @@ namespace Snake_box
                 {TagType.PanelEndLevel, "PanelEndLevel"},
                 {TagType.BonusPoint, "BonusPoint"},
                  {TagType.TurretPoint, "TurretPoint"},
-                {TagType.Enemy, "Enemy"}
+                {TagType.Enemy, "Enemy"},
+                {TagType.Canvas, "Canvas"}
             };
         }
 
