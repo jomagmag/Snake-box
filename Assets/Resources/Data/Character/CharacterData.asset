@@ -20,3 +20,4 @@ MonoBehaviour:
   Damage: 1
   SlowBlockSpeed: 1.5
   RamCooldown: 0.1
+  AngularSpeed: 10
