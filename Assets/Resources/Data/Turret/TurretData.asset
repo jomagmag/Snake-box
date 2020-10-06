@@ -48,7 +48,7 @@ MonoBehaviour:
     ThumbnailPrefab: {fileID: 269974265680797856, guid: 200f07bd5d78bcd4cb26d25e63b7b204,
       type: 3}
     PreferableEnemy: 0
-    TurretPrefab: {fileID: 1962457702341656, guid: aab8f459d9f6f1840a3731182032078d,
+    TurretPrefab: {fileID: 1962457702341656, guid: 9e23c0a1fccd493408c3d56f76eb2e17,
       type: 3}
     ArmorPiercing: 0
     FirePointHierarchy: TurretShift/FirePoint
