@@ -11,6 +11,8 @@ namespace Snake_box
     {
         #region Fields
 
+        [SerializeField] private string _enemyPointerDataPath;
+        [SerializeField] private string _zombiePointerDataPath;
         [SerializeField] private string _mainBuildDataPath;
         [SerializeField] private string _shakeDataPath;
         [SerializeField] private string _characterDataPath;
@@ -39,6 +41,7 @@ namespace Snake_box
         [SerializeField] private string _spriteDictionaryDataPath;
         [SerializeField] private string _TrapListDataPath;
         private static MainBuildData _mainBuildData;
+        private static PointerData _pointerData;
         private static BonusCoinsData _bonusCoinsData;
         private static BonusFireData _bonusFireData;
         private static BonusHpSnakeData _bonusHpSnakeData;
@@ -82,7 +85,31 @@ namespace Snake_box
 
                 return _mainBuildData;
             }
-        } 
+        }
+        public PointerData EnemyPointerData
+        {
+            get
+            {
+                if (_pointerData == null)
+                {
+                    _pointerData = Load<PointerData>("Data/" + Instance._enemyPointerDataPath);
+                }
+
+                return _pointerData;
+            }
+        }
+        public PointerData ZombiePointerData
+        {
+            get
+            {
+                if (_pointerData == null)
+                {
+                    _pointerData = Load<PointerData>("Data/" + Instance._zombiePointerDataPath);
+                }
+
+                return _pointerData;
+            }
+        }
 
         public BonusFireData BonusFireData
         {

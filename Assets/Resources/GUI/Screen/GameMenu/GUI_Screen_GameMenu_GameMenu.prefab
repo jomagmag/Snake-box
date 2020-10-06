@@ -365,7 +365,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7794568642701046769
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1151,7 +1151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8502095267625453666
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1269,7 +1269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7506755361075519030
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1384,7 +1384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5452526930669019716
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1423,7 +1423,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5113682398099306995
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2138,6 +2138,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ForceFieldBar
       objectReference: {fileID: 0}
+    - target: {fileID: 2380824940381355944, guid: 9782e6f79deb53947859f5ea3723258c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5420595767187045555, guid: 9782e6f79deb53947859f5ea3723258c,
         type: 3}
       propertyPath: m_FillAmount
@@ -2694,6 +2699,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonPlus (0)
       objectReference: {fileID: 0}
+    - target: {fileID: 251749942687572438, guid: 145b0990141320343b178f4ea21d268e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5008342304777458893, guid: 145b0990141320343b178f4ea21d268e,
         type: 3}
       propertyPath: m_Colors.m_SelectedColor.r
@@ -3099,6 +3109,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LocalCoins
       objectReference: {fileID: 0}
+    - target: {fileID: 1814334360704880011, guid: f9dee48c0b9fda145b4a2198c4d16b5e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3254385754278921999, guid: f9dee48c0b9fda145b4a2198c4d16b5e,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -3165,6 +3180,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HpBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380824940381355944, guid: 9782e6f79deb53947859f5ea3723258c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5420595767187045555, guid: 9782e6f79deb53947859f5ea3723258c,
         type: 3}
