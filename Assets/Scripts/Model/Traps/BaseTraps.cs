@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 namespace Snake_box
@@ -17,7 +16,7 @@ namespace Snake_box
             _data = data;
             rechargeDelay = data.ReloadTime;
         }
-        
+
         #region IExecute
 
         public void Execute()
@@ -32,7 +31,6 @@ namespace Snake_box
                 {
                     _isActive = true;
                     rechargeTime = rechargeDelay;
-
                 }
                 else
                 {
@@ -50,14 +48,15 @@ namespace Snake_box
         public void Spawn()
         {
             _gameObject = GameObject.Instantiate(_data.Prefab);
-            _gameObject.transform.position = GameObject.FindGameObjectWithTag(TagManager.GetTag(TagType.GrenadeLauncherPos)).transform.position;
+            if (GameObject.FindGameObjectWithTag(TagManager.GetTag(TagType.GrenadeLauncherPos)) != null)
+                _gameObject.transform.position = GameObject
+                    .FindGameObjectWithTag(TagManager.GetTag(TagType.GrenadeLauncherPos)).transform.position;
         }
 
         public void Destroy()
         {
             Object.Destroy(_gameObject);
         }
-
 
         #endregion
     }

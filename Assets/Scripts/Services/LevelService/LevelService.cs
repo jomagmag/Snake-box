@@ -96,7 +96,7 @@ namespace Snake_box
             if (GameObject.FindObjectOfType<NavMeshSurface>())
             {
                 var surface = GameObject.FindObjectOfType<NavMeshSurface>();
-                surface.BuildNavMesh();
+                //surface.BuildNavMesh();
             }
             FillTrapList();
         }

@@ -8,6 +8,172 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="CameraForMovie.cs" t="Include" />
+        <e p="MeshBaker" t="Include">
+          <e p="Editor" t="Include">
+            <e p="core" t="Include">
+              <e p="MB3_BakeInPlace.cs" t="Include" />
+              <e p="MB3_MBVersionEditor.cs" t="Include" />
+              <e p="MB3_MeshBakerEditorFunctions.cs" t="Include" />
+              <e p="MB3_TextureCombinerEditorFunctions.cs" t="Include" />
+              <e p="MB_EditorUtil.cs" t="Include" />
+              <e p="MB_ReplacePrefabsInScene.cs" t="Include" />
+            </e>
+            <e p="MB3_BatchPrefabBakerEditor.cs" t="Include" />
+            <e p="MB3_BoneWeightCopierEditor.cs" t="Include" />
+            <e p="MB3_DisableHiddenAnimationsEditor.cs" t="Include" />
+            <e p="MB3_MBVersionConcreteEditor.cs" t="Include" />
+            <e p="MB3_MeshBakerEditor.cs" t="Include" />
+            <e p="MB3_MeshBakerEditorInternal.cs" t="Include" />
+            <e p="MB3_MeshBakerEditorWindow.cs" t="Include" />
+            <e p="MB3_MeshBakerEditorWindowAddObjectsTab.cs" t="Include" />
+            <e p="MB3_MeshBakerEditorWindowAnalyseSceneTab.cs" t="Include" />
+            <e p="MB3_MeshBakerGrouperEditor.cs" t="Include" />
+            <e p="MB3_MeshBakerSettingsAssetEditor.cs" t="Include" />
+            <e p="MB3_MeshBakerSettingsEditor.cs" t="Include" />
+            <e p="MB3_MultiMeshBakerEditor.cs" t="Include" />
+            <e p="MB3_SearchFilters.cs" t="Include" />
+            <e p="MB3_TextureBakerEditor.cs" t="Include" />
+            <e p="MB3_TextureBakerEditorInternal.cs" t="Include" />
+            <e p="MB_BuildPreprocessChecker.cs" t="Include" />
+            <e p="MB_ReplacePrefabsInSceneEditorWindow.cs" t="Include" />
+            <e p="MB_ReplacePrefabsSettings.cs" t="Include" />
+            <e p="MB_TextureBakerEditorConfigureMultiMaterials.cs" t="Include" />
+            <e p="MB_TextureBakerEditorConfigureTextureArrays.cs" t="Include" />
+            <e p="propertyDrawers" t="Include">
+              <e p="MB3_ShaderTexturePropertyDrawer.cs" t="Include" />
+              <e p="MB_ConvertTextureArrayFormatWizard.cs" t="Include" />
+              <e p="MB_PrefabPairPropertyDrawer.cs" t="Include" />
+            </e>
+            <e p="searchFilters" t="Include">
+              <e p="MB3_GroupByAlreadyAdded.cs" t="Include" />
+              <e p="MB3_GroupByEnabledDisabled.cs" t="Include" />
+              <e p="MB3_GroupByLightmapIndex.cs" t="Include" />
+              <e p="MB3_GroupByMaterial.cs" t="Include" />
+              <e p="MB3_GroupByOutOfBoundsUVs.cs" t="Include" />
+              <e p="MB3_GroupByRenderType.cs" t="Include" />
+              <e p="MB3_GroupByShader.cs" t="Include" />
+              <e p="MB3_GroupByStandardShaderType.cs" t="Include" />
+              <e p="MB3_GroupByStatic.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Examples" t="Include">
+            <e p="BakeTexturesAtRuntime" t="Include">
+              <e p="BakeTexturesAtRuntime.cs" t="Include" />
+            </e>
+            <e p="BatchPrepareObjectsForDynamicBatching" t="Include">
+              <e p="MB_BatchPrepareObjectsForDynamicBatchingDescription.cs" t="Include" />
+            </e>
+            <e p="CharacterCustomization" t="Include">
+              <e p="CreditForModel.txt" t="Include" />
+              <e p="MB_SwapShirts.cs" t="Include" />
+            </e>
+            <e p="PrepareObjectsForDynamicBatching" t="Include">
+              <e p="MB_PrepareObjectsForDynamicBatchingDescription.cs" t="Include" />
+            </e>
+            <e p="SceneDynamicAddDelete" t="Include">
+              <e p="MB_DynamicAddDeleteExample.cs" t="Include" />
+            </e>
+            <e p="SceneRuntimeExample" t="Include">
+              <e p="MB_Example.cs" t="Include" />
+              <e p="MB_ExampleMover.cs" t="Include" />
+              <e p="MB_ExampleSkinnedMeshDescription.cs" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="UnlitTextureArrays.shader" t="Include" />
+            </e>
+            <e p="SkinnedMeshRenderer" t="Include">
+              <e p="MB_SkinnedMeshSceneController.cs" t="Include" />
+            </e>
+            <e p="SwitchBakedObjectsTexture" t="Include">
+              <e p="MB_SwitchBakedObjectsTexture.cs" t="Include" />
+            </e>
+          </e>
+          <e p="MeshBakerWorkingFolder" t="Include">
+            <e p="DONT_DELETE.txt" t="Include" />
+          </e>
+          <e p="ReadMe.txt" t="Include" />
+          <e p="Release Notes.txt" t="Include" />
+          <e p="Resources" t="Include">
+            <e p="Shaders" t="Include">
+              <e p="AlbedoShader.shader" t="Include" />
+              <e p="NormalMapShader.shader" t="Include" />
+              <e p="UnlitWithAlpha.shader" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+            <e p="AssignToMeshCustomizers" t="Include">
+              <e p="CustomizerPutSliceIndexInUV0_z.cs" t="Include" />
+            </e>
+            <e p="core" t="Include">
+              <e p="MB2_Core.cs" t="Include" />
+              <e p="MB2_Log.cs" t="Include" />
+              <e p="MB2_MBVersion.cs" t="Include" />
+              <e p="MB3_AgglomerativeClustering.cs" t="Include" />
+              <e p="MB3_CopyBoneWeights.cs" t="Include" />
+              <e p="MB3_GrouperCluster.cs" t="Include" />
+              <e p="MB3_MeshCombiner.cs" t="Include" />
+              <e p="MB3_MeshCombinerSettings.cs" t="Include" />
+              <e p="MB3_MeshCombinerSimple.cs" t="Include" />
+              <e p="MB3_MeshCombinerSimpleBlendShapes.cs" t="Include" />
+              <e p="MB3_MeshCombinerSimpleBones.cs" t="Include" />
+              <e p="MB3_MeshCombinerSimpleData.cs" t="Include" />
+              <e p="MB3_MeshCombinerSimpleUVAdjusterAtlas.cs" t="Include" />
+              <e p="MB3_MultiMeshCombiner.cs" t="Include" />
+              <e p="MB3_PriorityQueue.cs" t="Include" />
+              <e p="MB3_UVTransform.cs" t="Include" />
+              <e p="MB_BlendShape2CombinedMap.cs" t="Include" />
+              <e p="MB_DefaultMeshAssignCustomizer.cs" t="Include" />
+              <e p="MB_IAssignToMeshCustomizer.cs" t="Include" />
+              <e p="MB_IMeshBakerSettings.cs" t="Include" />
+              <e p="MB_SerializableSourceBlendShape2CombinedMap.cs" t="Include" />
+              <e p="MB_TGAWriter.cs" t="Include" />
+              <e p="MB_Utility.cs" t="Include" />
+              <e p="TextureCombiner" t="Include">
+                <e p="MB2_TexturePacker.cs" t="Include" />
+                <e p="MB2_TexturePackerHorizontalVert.cs" t="Include" />
+                <e p="MB3_AtlasPackerRenderTexture.cs" t="Include" />
+                <e p="MB3_ITextureCombinerPacker.cs" t="Include" />
+                <e p="MB3_TextureCombiner.cs" t="Include" />
+                <e p="MB3_TextureCombinerAtlasRect.cs" t="Include" />
+                <e p="MB3_TextureCombinerMerging.cs" t="Include" />
+                <e p="MB3_TextureCombinerNonTextureProperties.cs" t="Include" />
+                <e p="MB3_TextureCombinerPackerMeshBaker.cs" t="Include" />
+                <e p="MB3_TextureCombinerPackerMeshBakerFast.cs" t="Include" />
+                <e p="MB3_TextureCombinerPackerMeshBakerFastV2.cs" t="Include" />
+                <e p="MB3_TextureCombinerPackerMeshBakerHorizontalVertical.cs" t="Include" />
+                <e p="MB3_TextureCombinerPackerOneTextureInAtlas.cs" t="Include" />
+                <e p="MB3_TextureCombinerPackerUnity.cs" t="Include" />
+                <e p="MB3_TextureCombinerPipeline.cs" t="Include" />
+                <e p="MB_TextureArrays.cs" t="Include" />
+              </e>
+            </e>
+            <e p="MB2_TextureBakeResults.cs" t="Include" />
+            <e p="MB2_UpdateSkinnedMeshBoundsFromBones.cs" t="Include" />
+            <e p="MB2_UpdateSkinnedMeshBoundsFromBounds.cs" t="Include" />
+            <e p="MB3_BatchPrefabBaker.cs" t="Include" />
+            <e p="MB3_BoneWeightCopier.cs" t="Include" />
+            <e p="MB3_Comment.cs" t="Include" />
+            <e p="MB3_DisableHiddenAnimations.cs" t="Include" />
+            <e p="MB3_MBVersionConcrete.cs" t="Include" />
+            <e p="MB3_MeshBaker.cs" t="Include" />
+            <e p="MB3_MeshBakerCommon.cs" t="Include" />
+            <e p="MB3_MeshBakerGrouper.cs" t="Include" />
+            <e p="MB3_MeshBakerRoot.cs" t="Include" />
+            <e p="MB3_MultiMeshBaker.cs" t="Include" />
+            <e p="MB3_TextureBaker.cs" t="Include" />
+            <e p="TextureBlenders" t="Include">
+              <e p="TextureBlender.cs" t="Include" />
+              <e p="TextureBlenderFallback.cs" t="Include" />
+              <e p="TextureBlenderLegacyBumpDiffuse.cs" t="Include" />
+              <e p="TextureBlenderLegacyDiffuse.cs" t="Include" />
+              <e p="TextureBlenderMaterialPropertyCacheHelper.cs" t="Include" />
+              <e p="TextureBlenderStandardMetallic.cs" t="Include" />
+              <e p="TextureBlenderStandardMetallicRoughness.cs" t="Include" />
+              <e p="TextureBlenderStandardSpecular.cs" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="NavMeshComponents" t="Include">
           <e p="Editor" t="Include">
             <e p="NavMeshAssetManager.cs" t="Include" />
@@ -137,6 +303,9 @@
             <e p="MainBuild" t="Include">
               <e p="MainBuildData.cs" t="Include" />
             </e>
+            <e p="Pointers" t="Include">
+              <e p="PointerData.cs" t="Include" />
+            </e>
             <e p="Shakes" t="Include">
               <e p="SerializeShakeData.cs" t="Include" />
               <e p="ShakeInfo.cs" t="Include" />
@@ -158,6 +327,7 @@
           </e>
           <e p="Editor" t="Include">
             <e p="LoadLevelOnButtonPressEditor.cs" t="Include" />
+            <e p="TagSearch.cs" t="Include" />
           </e>
           <e p="Enum" t="Include">
             <e p="Direction.cs" t="Include" />
@@ -240,6 +410,11 @@
             <e p="MainBuild" t="Include">
               <e p="MainBuild.cs" t="Include" />
             </e>
+            <e p="Pointers" t="Include">
+              <e p="BasePointer.cs" t="Include" />
+              <e p="EnemyPointer.cs" t="Include" />
+              <e p="ZombiePointer.cs" t="Include" />
+            </e>
             <e p="Projectiles" t="Include">
               <e p="Abstract" t="Include">
                 <e p="ProjectileBuilderAbs.cs" t="Include" />
@@ -292,6 +467,7 @@
             <e p="LoadLevelOnButtonPress.cs" t="Include" />
             <e p="LoadLevelOnStartup.cs" t="Include" />
           </e>
+          <e p="PointerController.cs" t="Include" />
           <e p="Services" t="Include">
             <e p="CameraService" t="Include">
               <e p="CameraServices.cs" t="Include" />
@@ -394,7 +570,10 @@
             <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
+        <e p="unity3d.txt" t="Include" />
       </e>
+      <e p="MeshBakerCore.csproj" t="IncludeRecursive" />
+      <e p="MeshBakerEditor.csproj" t="IncludeRecursive" />
       <e p="NavMeshComponents.csproj" t="IncludeRecursive" />
       <e p="NavMeshComponentsEditor.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />

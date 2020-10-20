@@ -15,6 +15,7 @@
         Enemy  = 10,
         BonusPoint = 11,
         TurretPoint = 12,
-        Canvas =13
+        Canvas =13,
+        GrenadeLauncherPos = 14
     }
 }

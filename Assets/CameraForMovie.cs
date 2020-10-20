@@ -13,23 +13,28 @@ public class CameraForMovie : MonoBehaviour
         look,
         rotate,
     }
-    
-    
-    [Serializable]public struct doing
+
+
+    [Serializable]
+    public struct doing
     {
         public float starttime;
         public float endingtime;
         public act act;
         public GameObject prefab;
-        public GameObject prefabs { get=>prefab;
+
+        public GameObject prefabs
+        {
+            get => prefab;
             set => prefab = value;
         }
+
         public float angel;
         public Vector3 distace;
         public Vector3 axis;
     }
-    
-    
+
+
     List<IEnemy> enemies = new List<IEnemy>();
     public GameObject Player;
     public float distance;
@@ -46,23 +51,25 @@ public class CameraForMovie : MonoBehaviour
     private Queue<doing> _doings = new Queue<doing>();
     private doing current;
     private bool issetdistance;
+    private bool cameraset;
 
 
     private void Update()
     {
-        if (Player == null)
-        {
-            Player = GameObject.FindWithTag("Player");
-            if (Player != null)
+        if (!cameraset)
+            if (Player == null)
             {
-                SetCamera();
-                starting = true;
-                fillgamepref();
-                
+                Player = GameObject.FindWithTag("Player");
+                if (Player != null)
+                {
+                    SetCamera();
+                    cameraset = true;
+                    //starting = true;
+                    //fillgamepref();
+                }
             }
-        }
 
-        if (starting)
+        /*if (starting)
         {
             Debug.Log(current.act);
             currenttime += Time.deltaTime;
@@ -82,20 +89,20 @@ public class CameraForMovie : MonoBehaviour
             {
                 SetCamera();
             }
-        }
+        }*/
     }
 
 
     private void fillgamepref()
     {
+        things.Sort((doing, doing1) => doing.starttime > doing1.starttime ? 1 : 0);
 
-        things.Sort((doing, doing1) => doing.starttime>doing1.starttime? 1:0 );
-        
 
         for (int i = 0; i < things.Count; i++)
         {
             _doings.Enqueue(things[i]);
         }
+
         Debug.Log(_doings.Count);
     }
 
@@ -124,7 +131,8 @@ public class CameraForMovie : MonoBehaviour
             transform.position = a.distace;
             issetdistance = true;
         }
-        transform.RotateAround(a.prefabs.transform.position,a.axis,a.angel*Time.deltaTime);
+
+        transform.RotateAround(a.prefabs.transform.position, a.axis, a.angel * Time.deltaTime);
         //transform.LookAt(a.prefab.transform);
     }
 
@@ -137,7 +145,7 @@ public class CameraForMovie : MonoBehaviour
             transform.LookAt(Player.transform);
         }
     }
-    
+
     private void resetCamera()
     {
         gameObject.transform.SetParent(GameObject.FindGameObjectWithTag("TurretPoint").transform);
