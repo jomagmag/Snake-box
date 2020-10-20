@@ -20,6 +20,7 @@ TagManager:
   - Canvas
   - Turret
   - GrenadeLauncherPos
+  - PlayerSpawn
   layers:
   - Default
   - TransparentFX

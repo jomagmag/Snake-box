@@ -42,7 +42,7 @@ namespace Snake_box
             SaveData = new PrefsService();
             JsonService = new JsonService();
             LevelService = new LevelService();
-            FlyingIconsService = new FlyingIconsService();
+            //FlyingIconsService = new FlyingIconsService();
         }
         
         #endregion

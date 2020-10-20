@@ -267,6 +267,8 @@
               <e p="BonusFireData.cs" t="Include" />
               <e p="BonusHpSnakeData.cs" t="Include" />
               <e p="BonusSpeedData.cs" t="Include" />
+              <e p="NewBehaviourScript.cs" t="Include" />
+              <e p="NewBehaviourScript1.cs" t="Include" />
             </e>
             <e p="Character" t="Include">
               <e p="CharacterData.cs" t="Include" />
@@ -451,9 +453,10 @@
                 <e p="AirWaveTurret.cs" t="Include" />
                 <e p="CannonTurret.cs" t="Include" />
                 <e p="FrostGunTurret.cs" t="Include" />
-                <e p="FrostTurret.cs" t="Include" />
+                <e p="FrostShotgunTurret.cs" t="Include" />
                 <e p="LaserTurret.cs" t="Include" />
                 <e p="MachinegunTurret.cs" t="Include" />
+                <e p="PlasmaRailTurret.cs" t="Include" />
                 <e p="PlasmaTurret.cs" t="Include" />
                 <e p="ShotgunTurret.cs" t="Include" />
               </e>
@@ -577,7 +580,7 @@
       <e p="NavMeshComponents.csproj" t="IncludeRecursive" />
       <e p="NavMeshComponentsEditor.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
-      <e p="packages" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
       <e p="Snake-box.sln" t="IncludeFlat" />
       <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
