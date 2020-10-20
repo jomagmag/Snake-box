@@ -18,6 +18,9 @@ TagManager:
   - TurretPoint
   - Test
   - Canvas
+  - Turret
+  - GrenadeLauncherPos
+  - PlayerSpawn
   layers:
   - Default
   - TransparentFX

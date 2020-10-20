@@ -40,4 +40,5 @@ MonoBehaviour:
   _bordersDataPath: Level/BordersData
   _allSpawnListsDataPath: EnemySpawn/AllSpawnListsData
   _spriteDictionaryDataPath: Sprites/SpriteDictionary
+  _TrapListDataPath: Traps/TrapsList
   _levelPrefabsDataPath: Level/LevelPrefabs

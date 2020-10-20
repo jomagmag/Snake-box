@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -13,6 +14,7 @@ namespace Snake_box
         public List<IEnemy> ActiveEnemies = new List<IEnemy>();
         public List<BaseBonus> ActiveBonus = new List<BaseBonus>();
         public List<BonusBullet> ActiveBonusBullet = new List<BonusBullet>();
+        public List<BaseTraps> ActiveTraps = new List<BaseTraps>();
         public List<BasePointer> ActivePoints = new List<BasePointer>();
         private readonly LevelData _levelData;
         public CharacterBehaviour CharacterBehaviour;
@@ -48,13 +50,41 @@ namespace Snake_box
 
 
         #region Methods
+
+
+        public void FillTrapList()
+        {
+            foreach (var traps in Data.Instance.TrapList.TrapsList)
+            {
+                switch(traps.Type)
+                {
+                    case TrapType.None:
+                        break;
+                    case TrapType.Grenade:
+                        var trap = new GrenadeLauncherTraps(traps);
+                        trap.Spawn();
+                        ActiveTraps.Add(trap);
+                        break;
+                }
+            }
+        }
+
+
+        public void ClearTrapList()
+        {
+            for (int i = 0; i < ActiveTraps.Count; i++)
+            {
+                ActiveTraps[i].Destroy();
+            }
+            ActiveTraps.Clear();
+        }
         
         public void EndLevel()
         {
             SetPanelEndLevelActive(true);
             ActiveEnemies.Clear();
-            Data.Instance.TurretData.ClearTurretList();          
-            
+            ClearTrapList();
+            Data.Instance.TurretData.ClearTurretList();
         }
 
         private void LevelStart()
@@ -66,8 +96,9 @@ namespace Snake_box
             if (GameObject.FindObjectOfType<NavMeshSurface>())
             {
                 var surface = GameObject.FindObjectOfType<NavMeshSurface>();
-                surface.BuildNavMesh();
+                //surface.BuildNavMesh();
             }
+            FillTrapList();
         }
 
         public void FindGameObject()

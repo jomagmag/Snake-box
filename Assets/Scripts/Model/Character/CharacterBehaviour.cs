@@ -16,7 +16,7 @@ namespace Snake_box
         //private readonly List<BlockSnake> _blocksSnakes = new List<BlockSnake>();//блоки
         //private readonly List<Vector3> _positions = new List<Vector3>();// позиции блоков 
         //private float _sizeBlock;       
-        private Direction _direction = Direction.Up;
+        private Direction _direction = Direction.Left;
         private ITimeService _timeService;
         private bool hasSkill;
         private BonusData _bonus;
@@ -61,6 +61,8 @@ namespace Snake_box
                     _pointsTurret.Enqueue(points);
                 }
             }
+
+            CameraForMovie.Turn += InputMove;
         }
 
         #endregion
@@ -204,6 +206,11 @@ namespace Snake_box
             }
             return null;
           
+        }
+
+        public void SpeedNullifier()
+        {
+            _speed = 0;
         }
 
         #endregion

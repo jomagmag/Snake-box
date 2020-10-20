@@ -3,16 +3,16 @@
 
 namespace Snake_box
 {
-    public sealed class CharacterController : IExecute, ICleanUp, IInitialization    
+    public sealed class CharacterController : IExecute, ICleanUp, IInitialization
     {
-        #region Fields  
-        
+        #region Fields
+
         private CharacterBehaviour _characterBehaviour;
 
         #endregion
 
 
-        #region Methods        
+        #region Methods
 
         public void Initialization()
         {
@@ -21,6 +21,7 @@ namespace Snake_box
                 (AssetsPathGameObject.GameObjects[GameObjectType.Character]);
             _characterBehaviour = Object.Instantiate(characterBehaviour);
             Services.Instance.LevelService.CharacterBehaviour = _characterBehaviour;
+            CameraForMovie.stop += speednull;
         }
 
         public void Clean()
@@ -35,6 +36,11 @@ namespace Snake_box
             _characterBehaviour.Collision();
             //_characterBehaviour.ResetPosition();
             _characterBehaviour.DecreaseRamCooldown();
+        }
+
+        public void speednull()
+        {
+            _characterBehaviour.SpeedNullifier();
         }
 
         #endregion

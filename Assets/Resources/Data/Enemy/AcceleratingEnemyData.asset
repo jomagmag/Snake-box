@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: AcceleratingEnemyData
   m_EditorClassIdentifier: 
   ArmorType: 1
-  Prefab: {fileID: 5058968977680414830, guid: 796c9aacf5d197246b8aff8236df6438, type: 3}
+  Prefab: {fileID: 1713425991072746, guid: bf24fed5e4638cc49b75c572bf7c6c6f, type: 3}
   Hp: 1
   Speed: 1
   Damage: 1
-  SpawnRadius: 10
   SizePack: 0
   PackValue: 0
   MeleeHitRange: 0
+  HitCooldown: 0
+  KillReward: 0
   MaxSpeed: 100
   Accelerating: 10
