@@ -10,10 +10,13 @@ namespace Snake_box
         private KeyCode _left = KeyCode.A;
         private KeyCode _right = KeyCode.D;
         private KeyCode _up = KeyCode.W;
-        private KeyCode _down = KeyCode.S;        
+        private KeyCode _down = KeyCode.S;
+        private KeyCode _e = KeyCode.E;
+        private KeyCode _p = KeyCode.P;
+
 
         #endregion
-        
+
         private readonly CharacterData _characterData;
 #if UNITY_IOS || UNITY_ANDROID
         private float _minDistanceForSwipe = 20;
@@ -50,6 +53,23 @@ namespace Snake_box
             if (Input.GetKeyDown(_down))
             {
                 direction = Direction.Down;
+            }
+            if (Input.GetKeyDown(_e))
+            {
+                var point = Services.Instance.LevelService.CharacterBehaviour.GetPoint();
+                if (point != null)
+                {
+                    Data.Instance.TurretData.AddNewWithParent(point);
+                } 
+            }
+            if (Input.GetKeyDown(_p))
+            { 
+                
+                
+                EnemyPointer simplePointer = new EnemyPointer();///создаем указатель для обычного зомби
+                simplePointer.CreatePoint(GameObject.FindGameObjectWithTag("Test").transform);//устанавливаем врага(передаем его трансформ) для указателя
+                //ZombiePointer zombiePointer = new ZombiePointer();///создаем указатель для горящего зомби
+                //zombiePointer.CreatePoint();//устанавливаем врага(передаем его трансформ) для указателя
             }
 #endif
 #if UNITY_IOS || UNITY_ANDROID

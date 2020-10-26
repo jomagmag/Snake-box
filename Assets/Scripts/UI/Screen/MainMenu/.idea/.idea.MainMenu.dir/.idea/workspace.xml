@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ee5b3952-5dde-4ed6-88fa-204e4875451a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../../.idea/.idea.Snake-box/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../.idea/.idea.Snake-box/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../.idea/.idea.Snake-box/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../.idea/.idea.Snake-box/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../CameraForMovie.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../CameraForMovie.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Resources/Data/Enemy/SimpleEnemyData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Resources/Data/Enemy/SimpleEnemyData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Resources/Data/EnemySpawn/Level1EnemySpawnList.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Resources/Data/EnemySpawn/Level1EnemySpawnList.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Resources/Data/Level/BordersData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Resources/Data/Level/BordersData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Resources/Prefabs/Enemies/Zombie_HotDogSuit_Male_02.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Resources/Prefabs/Enemies/Zombie_HotDogSuit_Male_02.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Scenes/Game3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Scenes/Game3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Scenes/Game3/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Scenes/Game3/NavMesh.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Controllers/CharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Controllers/CharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Controllers/Controllers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Controllers/Controllers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Model/Enemy/BaseEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Model/Enemy/BaseEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Services/Services.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Services/Services.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../ProjectSettings/TagManager.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../../Model/Enemy/BaseEnemy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/NewBehaviourScript.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectId" id="1j8B6Mxtmn8cNyaW3i3naN8RN5g" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TWShift.4" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ee5b3952-5dde-4ed6-88fa-204e4875451a" name="Default Changelist" comment="" />
+      <created>1603175662431</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603175662431</updated>
+      <workItem from="1603175666311" duration="4000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+</project>

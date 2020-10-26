@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: InvisibleEnemyData
   m_EditorClassIdentifier: 
   ArmorType: 1
-  Prefab: {fileID: 5058968977680414830, guid: 796c9aacf5d197246b8aff8236df6438, type: 3}
+  Prefab: {fileID: 1055470696967520, guid: c71bf6cd6d34bde49b372339ff24be09, type: 3}
   Hp: 100
   Speed: 1
   Damage: 1
-  SpawnRadius: 50
   SizePack: 0
   PackValue: 0
   MeleeHitRange: 1
+  HitCooldown: 0
+  KillReward: 0
   InvisibleTime: 3

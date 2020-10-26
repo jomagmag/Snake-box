@@ -11,7 +11,7 @@ namespace Snake_box
         public TurretPreferences CannonTurret = new TurretPreferences();
         public TurretPreferences ShotgunTurret = new TurretPreferences();
         public TurretPreferences MachineGunTurret = new TurretPreferences();
-        public TurretPreferences FrostTurret = new TurretPreferences();
+        public TurretPreferences FrostShotgunTurret = new TurretPreferences();
         public TurretPreferences FrostGunTurret = new TurretPreferences();
         public TurretPreferences FreezerTurret = new TurretPreferences();
         public TurretPreferences PlasmaTurret = new TurretPreferences();
@@ -27,11 +27,13 @@ namespace Snake_box
         public List<TurretBaseAbs> TurretList = new List<TurretBaseAbs>();
         public TurretPlant TurretPlant;
 
+        public Queue<TurretBaseAbs> _turretQueue = new Queue<TurretBaseAbs>();
+
         #endregion
 
         #region ClassLifeCycle
 
-        public TurretData() => TurretPlant = new TurretPlant(this); 
+        public TurretData() => TurretPlant = new TurretPlant(this);
 
         #endregion
 
@@ -44,9 +46,9 @@ namespace Snake_box
         /// <returns></returns>
         public TurretBaseAbs AddNewTurret()
         {
-            TurretBaseAbs newTurret = TurretPlant.AddCannonTurret();
+            TurretBaseAbs newTurret = _turretQueue.Count > 0 ? _turretQueue.Dequeue() : TurretPlant.AddShotgunTurret();
 
-            TurretList.Add(newTurret);
+//            TurretList.Add(newTurret);
 
             return newTurret;
         }

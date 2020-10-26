@@ -16,7 +16,8 @@ MonoBehaviour:
   Armor: 100
   RegenerationArmor: 1
   SpeedRotation: 8.43
-  Speed: 20
+  Speed: 5
   Damage: 1
   SlowBlockSpeed: 1.5
   RamCooldown: 0.1
+  AngularSpeed: 10

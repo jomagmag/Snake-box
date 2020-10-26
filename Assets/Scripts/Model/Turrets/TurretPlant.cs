@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace Snake_box
 {
@@ -32,9 +34,37 @@ namespace Snake_box
 
         public TurretBaseAbs AddShotgunTurret() => AddAndReturn(typeof(ShotgunTurret));
 
-        public TurretBaseAbs AddFrostTurret() => AddAndReturn(typeof(FrostTurret));
+        public TurretBaseAbs AddFrostShotgunTurret() => AddAndReturn(typeof(FrostShotgunTurret));
 
         public TurretBaseAbs AddAirWaveTurret() => AddAndReturn(typeof(AirWaveTurret));
+        public TurretBaseAbs AddPlasmaRailTurret() => AddAndReturn(typeof(PlasmaRailTurret));
+
+        public void ChangeTurretType(KeyCode keyCode)
+        {
+            List<TurretBaseAbs> localList = new List<TurretBaseAbs>(_turretData.TurretList);
+            Dictionary<KeyCode, Type> buttonsDictionary = new Dictionary<KeyCode, Type>
+            {
+                { KeyCode.F, typeof(FrostShotgunTurret) },
+                { KeyCode.C, typeof(CannonTurret) },
+                { KeyCode.V, typeof(LaserTurret) },
+                { KeyCode.G, typeof(ShotgunTurret) },
+            };
+
+            if (localList.Count > 0)
+            {
+                List<TurretBaseAbs> turretBaseAbs = new List<TurretBaseAbs>();
+
+                foreach (TurretBaseAbs tba in localList)
+                {
+                    TurretBaseAbs turret2 = Data.Instance.TurretData.TurretPlant.AddAndReturn(buttonsDictionary[keyCode]);
+
+                    tba.ReplaceTurret(turret2);
+                    turretBaseAbs.Add(turret2);
+                }
+
+                _turretData.TurretList = turretBaseAbs;
+            }
+        }
 
         private TurretBaseAbs AddAndReturn(Type turretType)
         {
@@ -50,10 +80,12 @@ namespace Snake_box
                 newTurret = new PlasmaTurret().Build(_turretData.PlasmaTurret);
             else if (turretType == typeof(ShotgunTurret))
                 newTurret = new ShotgunTurret().Build(_turretData.ShotgunTurret);
-            else if (turretType == typeof(FrostTurret))
-                newTurret = new FrostTurret().Build(_turretData.FrostTurret);
+            else if (turretType == typeof(FrostShotgunTurret))
+                newTurret = new FrostShotgunTurret().Build(_turretData.FrostShotgunTurret);
             else if (turretType == typeof(AirWaveTurret))
                 newTurret = new AirWaveTurret().Build(_turretData.AirWaveTurret);
+            else if (turretType == typeof(PlasmaRailTurret))
+                newTurret = new PlasmaRailTurret().Build(_turretData.PlasmaRailTurret);
             else
                 newTurret = new CannonTurret().Build(_turretData.CannonTurret);
 

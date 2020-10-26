@@ -46,7 +46,7 @@ namespace Snake_box
         }
 
         #endregion
-        
+
 
         #region Properties
 
@@ -61,11 +61,13 @@ namespace Snake_box
         {
             if (_levelService.Target == null)
             {
-               _levelService.FindGameObject(); 
+                _levelService.FindGameObject();
             }
-            _target = _levelService.Target.transform;
-            _enemyObject = GameObject.Instantiate(_prefab, position, Quaternion.identity);
-            _navMeshAgent = _enemyObject.GetComponent<NavMeshAgent>();
+
+            _target = GameObject.FindGameObjectWithTag(TagManager.GetTag(TagType.Player))
+                .transform; //_levelService.Target.transform; //вернуть цель после ролика
+            _enemyObject = GameObject.Instantiate(_prefab, position+offset(), Quaternion.identity);
+            _navMeshAgent = _enemyObject.GetComponentInChildren<NavMeshAgent>();
             _navMeshAgent.speed = _speed;
             _transform = _enemyObject.transform;
             _isNeedNavMeshUpdate = true;
@@ -74,15 +76,21 @@ namespace Snake_box
                 _levelService.ActiveEnemies.Add(this);
         }
 
+
+        private Vector3 offset()
+        {
+            return new Vector3(Random.Range(-2,2),0,Random.Range(-2,2));
+        }
+
         public virtual void OnUpdate()
 
         {
-            if (_isNeedNavMeshUpdate)
-            {
-                if (_target != null)
-                    _navMeshAgent.SetDestination(_target.transform.position);
-                _isNeedNavMeshUpdate = false;
-            }
+            //if (_isNeedNavMeshUpdate)
+            //{
+            //if (_target != null && _navMeshAgent.isOnNavMesh)
+            _navMeshAgent.SetDestination(_target.transform.position);
+            //  _isNeedNavMeshUpdate = false;
+            //}
             DecreaseCurrentHitCooldown();
             HitCheck();
         }
@@ -131,10 +139,9 @@ namespace Snake_box
                             Services.Instance.LevelService.CharacterBehaviour.SetArmor(_damage);
                             _currentHitCooldown = _hitCooldown;
                         }
+
                         Services.Instance.LevelService.CharacterBehaviour.RamEnemy(this);
                         _stoping.AddTimeRemaining();
-                       
-                       
                     }
                     else if (colliders[i].CompareTag(TagManager.GetTag(TagType.Block)))
                     {
@@ -143,14 +150,15 @@ namespace Snake_box
                             Services.Instance.LevelService.CharacterBehaviour.SetDamage(_damage);
                             _currentHitCooldown = _hitCooldown;
                         }
+
                         _stoping.AddTimeRemaining();
                     }
-                }  
+                }
             }
         }
 
         protected virtual void GetTarget()
-        {    
+        {
             _target = GameObject.FindWithTag(TagManager.GetTag(TagType.Target)).transform;
         }
 
@@ -169,7 +177,7 @@ namespace Snake_box
                 _levelService.ActiveEnemies.Remove(this);
             Object.Destroy(_enemyObject);
             Wallet.PutLocalCoins(_killReward);
-            Services.Instance.FlyingIconsService.CreateFlyingMoney(_enemyObject.transform.position);
+            //Services.Instance.FlyingIconsService.CreateFlyingMoney(_enemyObject.transform.position);
             if (_levelService.ActiveEnemies.Count == 0 && Services.Instance.LevelService.IsLevelSpawnEnded)
             {
                 _levelService.EndLevel();
@@ -202,6 +210,5 @@ namespace Snake_box
         }
 
         #endregion
-    }  
+    }
 }
-

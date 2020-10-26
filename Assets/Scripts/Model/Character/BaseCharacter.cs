@@ -15,6 +15,7 @@ namespace Snake_box
         protected float _currentSnakeHp;//Текущее кол-во Здоровья
         protected float _damage;//урон
         protected float _speed;//скорость
+        protected float _angularSpeed;
         private Direction _direction = Direction.Up;
 
         #endregion

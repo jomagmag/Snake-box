@@ -7,6 +7,7 @@ namespace Snake_box
     public class ProjectilePreferences
     {
         public GameObject ProjectilePrefab;
+        public GameObject ShootingVfxPrefab;
         public int ProjectileSpeed = 50;
         public float ProjectileDamage = 10;
         public bool ProjectileFollowsTarget = true;
@@ -15,5 +16,6 @@ namespace Snake_box
         public int NumberOfPeaces = 10;
         public float ActivationDistance = 0.1f;
         public float SelfDestructAfter = 5;
+        public Transform ExplosionEffect;
     }
 }

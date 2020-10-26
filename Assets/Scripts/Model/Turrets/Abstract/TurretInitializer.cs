@@ -24,17 +24,20 @@ namespace Snake_box
         private List<IEnemy> _dummyEnemies = new List<IEnemy>();
         private Quaternion _haltTurretRotation;
         //todo use TimeRemaining
-        private float _frameRateLock = 0;
+        private float _frameRateLock = int.MinValue;
+        private Vector3 _startVector3 = new Vector3(int.MaxValue, int.MaxValue, int.MaxValue);
 
         #endregion
 
 
         #region Properties
 
-        public float Cooldown => TurretPreferences.Cooldown;
-        public float TurretRange => TurretPreferences.Range;
+        public float Cooldown => TurretPreferences.Cooldown * FireRateMod;
+        public float TurretRange => TurretPreferences.Range * TurretDistanceMod;
         public GameObject TurretPrefab => TurretPreferences.TurretPrefab;
         public EnemyType PreferredArmorType => TurretPreferences.PreferableEnemy;
+        public float BuyCost => TurretPreferences.BuyPrice * DecreaseBuyCost;
+        public float UpdateCost => TurretPreferences.UpdatePrice * DecreaseUpgradeCost;
 
         #endregion
 
@@ -44,7 +47,7 @@ namespace Snake_box
         public void Initialization()
         {
             GameObject turretResource =  TurretPreferences != null && TurretPrefab != null ? TurretPrefab : Resources.Load<GameObject>(TurretSpritePath);
-            TurretInstance = Object.Instantiate(turretResource, Vector3.zero, turretResource.transform.rotation);
+            TurretInstance = Object.Instantiate(turretResource, _startVector3, turretResource.transform.rotation);
             _haltTurretRotation = TurretInstance.transform.rotation;
             FirePoint = TurretPreferences != null ? TurretInstance.transform.Find(TurretPreferences.FirePointHierarchy) : TurretInstance.transform;
         }
@@ -59,6 +62,28 @@ namespace Snake_box
         {
             TurretInstance.transform.parent = parentTransform;
             TurretInstance.transform.localPosition = Vector3.zero;
+        }
+
+        public override void ReleaseTurret()
+        {
+            //            TurretInstance.SetActive(false);
+            _isDeleted = true;
+
+            TurretInstance.SetActive(false);
+            Object.Destroy(TurretInstance, 5);
+        }
+
+        public override void ReplaceTurret(TurretBaseAbs newOne)
+        {
+            newOne.SetParentTransform(GetParentTransform());
+            ReleaseTurret();
+        }
+
+        private bool _isDeleted = false;
+
+        public override Transform GetParentTransform()
+        {
+            return TurretInstance.transform.parent;
         }
 
         public override void Execute()
@@ -76,6 +101,11 @@ namespace Snake_box
 
         public void ContinueShooting()
         {
+            if (_isDeleted)
+            {
+                return;
+            }
+
             if (Time.frameCount - _frameRateLock > Cooldown)
             {
                 IEnemy nearestEnemy = NearestEnemy();
@@ -85,11 +115,18 @@ namespace Snake_box
 
                 GetProjectile().Build(FirePoint, nearestEnemy);
 
+                if (TurretInstance.TryGetComponent(out CustomAnimationClass customAnimationClass))
+                {
+                    customAnimationClass.DoOpenFire();
+                }
+
                 _frameRateLock = Time.frameCount + Mathf.Round(Random.value * 10);
             }
         }
 
-        protected virtual ProjectileBuilderAbs GetProjectile() => new CannonShellBuilder().SetProjectilePreferences(TurretPreferences.ProjectilePreferences);
+        protected virtual ProjectileBuilderAbs GetProjectile() =>
+            new CannonShellBuilder().SetProjectilePreferences(TurretPreferences.ProjectilePreferences)
+                .SetDamageAndAbility(TurretDistanceMod, AbilityLevel, ProjectileDamageMod);
 
         private Quaternion RotateAroundAxis(Vector3 pointA, Vector3 pointB, Quaternion startRotation)
         {
@@ -105,17 +142,26 @@ namespace Snake_box
 
         public void LockTarget()
         {
+
+            if (_isDeleted)
+            {
+                return;
+            }
+
             IEnemy nearestEnemy = NearestEnemy();
 
             if (nearestEnemy == null)
                 return;
 
-            Vector3 lookAngles = Quaternion.LookRotation(nearestEnemy.GetPosition() - TurretInstance.transform.position).eulerAngles;
-            lookAngles.x = _haltTurretRotation.eulerAngles.x;
-            lookAngles.z = _haltTurretRotation.eulerAngles.z;
-            lookAngles.y = lookAngles.y + _haltTurretRotation.eulerAngles.y;
+            if (nearestEnemy.GetPosition() - TurretInstance.transform.position != Vector3.zero)
+            {
+                Vector3 lookAngles = Quaternion.LookRotation(nearestEnemy.GetPosition() - TurretInstance.transform.position).eulerAngles;
+                lookAngles.x = _haltTurretRotation.eulerAngles.x;
+                lookAngles.z = _haltTurretRotation.eulerAngles.z;
+                lookAngles.y = lookAngles.y + _haltTurretRotation.eulerAngles.y;
 
-            TurretInstance.transform.rotation = Quaternion.Euler(lookAngles);
+                TurretInstance.transform.rotation = Quaternion.Euler(lookAngles);
+            }
         }
 
         private void CollectKilledEnemies() => _dummyEnemies = _dummyEnemies.Where((element) => !element.AmIDestroyed()).ToList();
@@ -161,6 +207,12 @@ namespace Snake_box
 
         private void HaltTurret()
         {
+
+            if (_isDeleted)
+            {
+                return;
+            }
+
             IEnemy nearestEnemy = NearestEnemy();
 
             if (nearestEnemy == null)

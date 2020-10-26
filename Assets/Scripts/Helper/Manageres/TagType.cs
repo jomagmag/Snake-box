@@ -13,6 +13,9 @@
         Spawn  = 8,
         PanelEndLevel = 9,
         Enemy  = 10,
-        BonusPoint = 11
+        BonusPoint = 11,
+        TurretPoint = 12,
+        Canvas =13,
+        GrenadeLauncherPos = 14
     }
 }

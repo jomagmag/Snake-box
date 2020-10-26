@@ -22,23 +22,37 @@ namespace Snake_box
         private bool _targetLocked = false;
         private ProjectilePreferences _projectilePreferences;
 
+        protected float ProjectileDamageMod;
+        protected float AbilityLevel;
+
         #endregion
 
 
         #region Properties
 
         public Vector3 AngleLock => _projectilePreferences.AngleLock;
-        public float CarryingDamage => _projectilePreferences.ProjectileDamage;
+        public float CarryingDamage => _projectilePreferences.ProjectileDamage * ProjectileDamageMod;
         public int BulletSpeed => _projectilePreferences.ProjectileSpeed;
+
         public ArmorTypes ArmorPiecing => _projectilePreferences.ArmorPiercing;
         public List<IEnemy> ActiveEnemies => Services.Instance.LevelService.ActiveEnemies;
 
         #endregion
 
 
+        #region IExecute
+
+        public abstract void Execute(); 
+
+        #endregion
+
+
         #region Methods
 
-        public abstract void Execute();
+        public void SetProjectileDamageMod(float newProjectileDamageMod) => ProjectileDamageMod = newProjectileDamageMod;
+
+        public void SetAbilityLevel(int newAbilityLevel) => AbilityLevel = newAbilityLevel;
+
 
         public void SetProjectilePreferences(ProjectilePreferences projectilePreferences) => _projectilePreferences = projectilePreferences;
 
@@ -119,10 +133,16 @@ namespace Snake_box
                 Vector3.Lerp(_firePoint.transform.position, _targetToPursue.GetTransform().position, interpolation);
 
             if (interpolation >= 1 || _timeToBeDestructedAfter < projectileLifespan)
+            {
+                _fireConnected = true;
+
                 Decommission();
+            }
+                
         }
 
         public Vector3 FinalPosition = Vector3.zero;
+        private bool _fireConnected;
 
         private void DecommissionIfExpired()
         {
@@ -135,6 +155,7 @@ namespace Snake_box
         private void DecommissionWithEnemy(IEnemy activeEnemy)
         {
             _targetToPursue = activeEnemy;
+            _projectileInstance.transform.position = _targetToPursue.GetPosition();
 
             Decommission();
         }
@@ -155,7 +176,7 @@ namespace Snake_box
             {
                 Rigidbody rb = _projectileInstance.AddComponent<Rigidbody>();
                 rb.useGravity = false;
-                rb.velocity = (direction3d.normalized + new Vector3(Random.value * 0.5f - 0.25f, 0, Random.value * 0.5f - 0.25f)) * 2;
+                rb.velocity = (direction3d.normalized + new Vector3(Random.value * 0.5f - 0.25f, 0, Random.value * 0.5f - 0.25f)) * BulletSpeed;
             }
 
             Ray hitRay = new Ray(_projectileInstance.transform.position, _projectileInstance.transform.forward);
@@ -171,6 +192,7 @@ namespace Snake_box
 
                     if (enemyCollider == hitInfo.collider)
                     {
+                        _fireConnected = true;
 
                         DecommissionWithEnemy(activeEnemy);
 
@@ -239,6 +261,14 @@ namespace Snake_box
             {
                 if (_targetToPursue is IDamageAddressee ida) 
                     ida.RegisterDamage(CarryingDamage, ArmorPiecing);
+            }
+
+            if (_projectilePreferences.ExplosionEffect && _fireConnected)
+            {
+                Transform explosionEffect = Object.Instantiate(_projectilePreferences.ExplosionEffect,
+                    _projectileInstance.transform.position, _projectileInstance.transform.rotation);
+
+                Object.Destroy(explosionEffect.gameObject, 1);
             }
 
             ToDispose = true;
