@@ -17,6 +17,7 @@ namespace Snake_box
         protected float _speed;//скорость
         protected float _angularSpeed;
         private Direction _direction = Direction.Up;
+        protected AnimationCurve _animation;
 
         #endregion
 

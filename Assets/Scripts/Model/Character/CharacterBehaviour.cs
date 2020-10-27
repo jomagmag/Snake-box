@@ -25,6 +25,7 @@ namespace Snake_box
         private float _ramCooldown;
         private float _currentRamCooldown = 0;
         private Queue<GameObject> _pointsTurret;
+        private Vector3 _priveusPos;
 
         #endregion
 
@@ -53,6 +54,7 @@ namespace Snake_box
             _snakeArmorGeneration = _characterData.RegenerationArmor;
             _ramCooldown = _characterData.RamCooldown;
             _pointsTurret = new Queue<GameObject>();
+            _animation = _characterData.Curve;
             var pointTurrets = GameObject.FindGameObjectsWithTag(TagManager.GetTag(TagType.TurretPoint));
             if (pointTurrets.Length != 0)
             {
@@ -147,12 +149,13 @@ namespace Snake_box
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, _direction.ToQuaternion(), _timeService.DeltaTime()*_angularSpeed);
             transform.position += transform.forward * ((_speed /*- (_positions.Count * _slowSnake)*/) * _timeService.DeltaTime());
+
         }
 
         public void InputMove(Direction direction)//движение
         {
-            if (direction != Direction.None && !direction.IsOpposite(_direction))
-                _direction = direction;
+            //if (direction != Direction.None && !direction.IsOpposite(_direction))
+            _direction = direction;
             TeleportIfOutOfBorder();
         }
 

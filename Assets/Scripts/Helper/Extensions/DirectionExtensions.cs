@@ -28,8 +28,8 @@ namespace Snake_box
         {
             switch (dir1)
             {
-                case Direction.None:
-                    return false;
+                //case Direction.None:
+                //    return false;
                 case Direction.Left:
                     return dir2 == Direction.Right;
                 case Direction.Right:

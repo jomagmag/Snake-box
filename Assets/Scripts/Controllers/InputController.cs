@@ -13,6 +13,7 @@ namespace Snake_box
         private KeyCode _down = KeyCode.S;
         private KeyCode _e = KeyCode.E;
         private KeyCode _p = KeyCode.P;
+        Direction direction = Direction.Left;
 
 
         #endregion
@@ -36,24 +37,32 @@ namespace Snake_box
 
         public void Execute()
         {
-            Direction direction = Direction.None;
+            
 #if UNITY_STANDALONE || UNITY_WEBGL || UNITY_EDITOR || UNITY_WSA
             if (Input.GetKeyDown(_left))
-            {
-                direction = Direction.Left;
+            {               
+                if (direction<= Direction.Left)
+                {
+                    direction = Direction.Down;
+                }
+                else direction --;
             }
             if (Input.GetKeyDown(_right))
             {
-                direction = Direction.Right;
+                if (direction >= Direction.Down)
+                {
+                    direction = Direction.Left;
+                }
+                else direction++;                
             }
-            if (Input.GetKeyDown(_up))
-            {
-                direction = Direction.Up;
-            }
-            if (Input.GetKeyDown(_down))
-            {
-                direction = Direction.Down;
-            }
+            //if (Input.GetKeyDown(_up))
+            //{
+            //    direction = Direction.Up;
+            //}
+            //if (Input.GetKeyDown(_down))
+            //{
+            //    direction = Direction.Down;
+            //}
             if (Input.GetKeyDown(_e))
             {
                 var point = Services.Instance.LevelService.CharacterBehaviour.GetPoint();
