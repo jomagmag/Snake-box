@@ -15,5 +15,6 @@ namespace Snake_box
         public float SlowBlockSpeed;
         public float RamCooldown;
         public float AngularSpeed;
+        public AnimationCurve Curve;
     }
 }
