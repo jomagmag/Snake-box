@@ -16,8 +16,32 @@ MonoBehaviour:
   Armor: 100
   RegenerationArmor: 1
   SpeedRotation: 8.43
-  Speed: 5
+  Speed: 10
   Damage: 1
   SlowBlockSpeed: 1.5
   RamCooldown: 0.1
-  AngularSpeed: 10
+  AngularSpeed: 1.5
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.3994304
+      value: 0.04964975
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 9.681992
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
