@@ -9,10 +9,12 @@ namespace Snake_box
     {
         private const float TELEPORTATION_OFFSET = 0.1f;
 
-        #region Fields       
+        #region Fields
 
         [SerializeField] private float _radius;
+
         private CharacterData _characterData;
+
         //private readonly List<BlockSnake> _blocksSnakes = new List<BlockSnake>();//блоки
         //private readonly List<Vector3> _positions = new List<Vector3>();// позиции блоков 
         //private float _sizeBlock;       
@@ -20,7 +22,7 @@ namespace Snake_box
         private ITimeService _timeService;
         private bool hasSkill;
         private BonusData _bonus;
-        private GameObject _player;//переделать через сервис
+        private GameObject _player; //переделать через сервис
         private float _slowSnake;
         private float _ramCooldown;
         private float _currentRamCooldown = 0;
@@ -119,7 +121,7 @@ namespace Snake_box
 
         public void Collision()
         {
-            var tagCollider = Physics.OverlapSphere(transform.position, _radius);
+            /*var tagCollider = Physics.OverlapSphere(transform.position, _radius);
             for (int i = 0; i < tagCollider.Length; i++)
             {
                 if (tagCollider[i].CompareTag(TagManager.GetTag(TagType.Bonus)))
@@ -133,7 +135,7 @@ namespace Snake_box
                         }
                     }
                 }
-            }
+            }*/
         }
 
         //public BlockSnake GetBlock(int indexBlock)
@@ -145,14 +147,15 @@ namespace Snake_box
         //    else return null;
         //}
 
-        public void ConstantMove()//постоянное движение
+        public void ConstantMove() //постоянное движение
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, _direction.ToQuaternion(), _timeService.DeltaTime()*_angularSpeed);
-            transform.position += transform.forward * ((_speed /*- (_positions.Count * _slowSnake)*/) * _timeService.DeltaTime());
-
+            transform.rotation = Quaternion.Lerp(transform.rotation, _direction.ToQuaternion(),
+                _timeService.DeltaTime() * _angularSpeed);
+            transform.position += transform.forward *
+                                  ((_speed /*- (_positions.Count * _slowSnake)*/) * _timeService.DeltaTime());
         }
 
-        public void InputMove(Direction direction)//движение
+        public void InputMove(Direction direction) //движение
         {
             //if (direction != Direction.None && !direction.IsOpposite(_direction))
             _direction = direction;
@@ -171,13 +174,17 @@ namespace Snake_box
         {
             BordersData bordersData = Data.Instance.BordersData;
             if (transform.position.x < bordersData.LeftBorderX)
-                transform.position = new Vector3(bordersData.RightBorderX - TELEPORTATION_OFFSET, transform.position.y, transform.position.z);
+                transform.position = new Vector3(bordersData.RightBorderX - TELEPORTATION_OFFSET, transform.position.y,
+                    transform.position.z);
             if (transform.position.x > bordersData.RightBorderX)
-                transform.position = new Vector3(bordersData.LeftBorderX + TELEPORTATION_OFFSET, transform.position.y, transform.position.z);
+                transform.position = new Vector3(bordersData.LeftBorderX + TELEPORTATION_OFFSET, transform.position.y,
+                    transform.position.z);
             if (transform.position.z < bordersData.BottomBorderZ)
-                transform.position = new Vector3(transform.position.x, transform.position.y, bordersData.TopBorderZ - TELEPORTATION_OFFSET);
+                transform.position = new Vector3(transform.position.x, transform.position.y,
+                    bordersData.TopBorderZ - TELEPORTATION_OFFSET);
             if (transform.position.z > bordersData.TopBorderZ)
-                transform.position = new Vector3(transform.position.x, transform.position.y, bordersData.BottomBorderZ + TELEPORTATION_OFFSET);
+                transform.position = new Vector3(transform.position.x, transform.position.y,
+                    bordersData.BottomBorderZ + TELEPORTATION_OFFSET);
         }
 
         public void SetDamage(IDamageAddressee damageAddressee)
@@ -207,8 +214,8 @@ namespace Snake_box
             {
                 return _pointsTurret.Dequeue().transform;
             }
+
             return null;
-          
         }
 
         public void SpeedNullifier()

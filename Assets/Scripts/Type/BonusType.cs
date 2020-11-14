@@ -3,8 +3,7 @@
     public enum BonusType 
     {
         None = 0,
-        Freezing = 1,
-        Plazming = 2,
-        Noising = 3
+        Turret = 1,
+        Misc = 2
     }
 }

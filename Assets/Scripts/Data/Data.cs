@@ -31,22 +31,15 @@ namespace Snake_box
         [SerializeField] private string _turretDataPath;
         [SerializeField] private string _borderDataPath;
         [SerializeField] private string _blockSnakeDataPath;
-        [SerializeField] private string _bonusCoinsDataPath;
-        [SerializeField] private string _bonusHpSnakeDataPath;
-        [SerializeField] private string _bonusSpeedDataPath;
-        [SerializeField] private string _bonusFireDataPath;
         [SerializeField] private string _shellDataPath;
         [SerializeField] private string _bordersDataPath;
-        [SerializeField] private string _allSpawnListsDataPath;
         [SerializeField] private string _spriteDictionaryDataPath;
         [SerializeField] private string _TrapListDataPath;
+        [SerializeField] private string _TurredBonusDataPath;
+        [SerializeField] private string _allSpawnListsDataPath;
+        [SerializeField] private string _levelPrefabsDataPath;
         private static MainBuildData _mainBuildData;
         private static PointerData _pointerData;
-        private static BonusCoinsData _bonusCoinsData;
-        private static BonusFireData _bonusFireData;
-        private static BonusHpSnakeData _bonusHpSnakeData;
-        private static BonusSpeedData _bonusSpeedData;
-        [SerializeField] private string _levelPrefabsDataPath;
         private static ShakesData _shake;
         private static CharacterData _characterData;
         private static SimpleEnemyData _simpleEnemyData;
@@ -65,6 +58,7 @@ namespace Snake_box
         private static ShellData _shellData;
         private static SpriteDictionary _spriteDictonary;
         private static TrapList _trapList;
+        private static TurretBonusData _turretBonusData;
         private static readonly Lazy<Data> _instance = new Lazy<Data>(() => Load<Data>("Data/" + typeof(Data).Name));
         
         #endregion
@@ -110,57 +104,17 @@ namespace Snake_box
                 return _pointerData;
             }
         }
-
-        public BonusFireData BonusFireData
-        {
-
-            get
-            {
-                if (_bonusFireData == null)
-                {
-                    _bonusFireData = Load<BonusFireData>("Data/" + Instance._bonusFireDataPath);
-                }
-
-                return _bonusFireData;
-            }
-        } 
-
-        public BonusCoinsData BonusCoinsData
+        
+        public TurretBonusData TurretBonusData
         {
             get
             {
-                if (_bonusCoinsData == null)
+                if (_turretBonusData == null)
                 {
-                    _bonusCoinsData = Load<BonusCoinsData>("Data/" + Instance._bonusCoinsDataPath);
+                    _turretBonusData = Load<TurretBonusData>("Data/" + Instance._TurredBonusDataPath);
                 }
 
-                return _bonusCoinsData;
-            }
-        }
-
-        public BonusHpSnakeData BonusHpSnakeData
-        {
-            get
-            {
-                if (_bonusHpSnakeData == null)
-                {
-                    _bonusHpSnakeData = Load<BonusHpSnakeData>("Data/" + Instance._bonusHpSnakeDataPath);
-                }
-
-                return _bonusHpSnakeData;
-            }
-        }
-
-        public BonusSpeedData BonusSpeedData
-        {
-            get
-            {
-                if (_bonusSpeedData == null)
-                {
-                    _bonusSpeedData = Load<BonusSpeedData>("Data/" + Instance._bonusSpeedDataPath);
-                }
-
-                return _bonusSpeedData;
+                return _turretBonusData;
             }
         }
 

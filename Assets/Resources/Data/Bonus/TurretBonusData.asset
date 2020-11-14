@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e44a7766cab03c147afdd04402832c6d, type: 3}
-  m_Name: BonusSpeedData
+  m_Script: {fileID: 11500000, guid: c74171c118ea4e90963851547bdde1c9, type: 3}
+  m_Name: TurretBonusData
   m_EditorClassIdentifier: 
-  Icon: {fileID: 0}
-  Prefab: {fileID: 8005666936475753881, guid: 0dcf14ba1fc1d77498cb26fd21714e86, type: 3}
-  LifeTime: 10
-  Speed: 50
-  TimeEffect: 5
+  prefab: {fileID: 1949828369876463914, guid: fde0a8aa500eac04eaf1c8991f1edff7, type: 3}
+  Type: 1
+  PercentageA: 25
+  PercentageB: 5

@@ -9,11 +9,18 @@ namespace Snake_box
 {
     public sealed class LevelService : Service
     {
+        #region Events
+
+        public event Action WaveStarted;
+
+        #endregion
+        
+        
+        
         #region Fields
 
         public List<IEnemy> ActiveEnemies = new List<IEnemy>();
         public List<BaseBonus> ActiveBonus = new List<BaseBonus>();
-        public List<BonusBullet> ActiveBonusBullet = new List<BonusBullet>();
         public List<BaseTraps> ActiveTraps = new List<BaseTraps>();
         public List<BasePointer> ActivePoints = new List<BasePointer>();
         private readonly LevelData _levelData;

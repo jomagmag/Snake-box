@@ -242,7 +242,6 @@
             <e p="AssetsPathScreen.cs" t="Include" />
           </e>
           <e p="Controllers" t="Include">
-            <e p="BonusFireController.cs" t="Include" />
             <e p="BonusSpawnController.cs" t="Include" />
             <e p="CharacterController.cs" t="Include" />
             <e p="Controllers.cs" t="Include" />
@@ -272,13 +271,8 @@
               <e p="BlockSnakeData.cs" t="Include" />
             </e>
             <e p="Bonus" t="Include">
-              <e p="BonusCoinsData.cs" t="Include" />
               <e p="BonusData.cs" t="Include" />
-              <e p="BonusFireData.cs" t="Include" />
-              <e p="BonusHpSnakeData.cs" t="Include" />
-              <e p="BonusSpeedData.cs" t="Include" />
-              <e p="NewBehaviourScript.cs" t="Include" />
-              <e p="NewBehaviourScript1.cs" t="Include" />
+              <e p="TurretBonusData.cs" t="Include" />
             </e>
             <e p="Character" t="Include">
               <e p="CharacterData.cs" t="Include" />
@@ -389,12 +383,7 @@
             </e>
             <e p="Bonus" t="Include">
               <e p="BaseBonus.cs" t="Include" />
-              <e p="BonusBullet.cs" t="Include" />
-              <e p="BonusCoins.cs" t="Include" />
-              <e p="BonusFire.cs" t="Include" />
-              <e p="BonusHpSnake.cs" t="Include" />
-              <e p="BonusList.cs" t="Include" />
-              <e p="BonusSpeed.cs" t="Include" />
+              <e p="TurretBonus.cs" t="Include" />
             </e>
             <e p="Character" t="Include">
               <e p="BaseCharacter.cs" t="Include" />

@@ -7,11 +7,8 @@ namespace Snake_box
     {
         #region PrivateData
 
-        protected Sprite _icon;// иконка
-        protected Transform _prefab;
-        protected Transform _bonus;
-        protected TimeRemaining _lifeTimer;
-        protected float _lifeTime;
+        protected GameObject _prefab;
+        protected BonusType _type;
 
         #endregion
 
@@ -20,35 +17,20 @@ namespace Snake_box
 
         public BaseBonus(BonusData BonusData)
         {
-            _lifeTime = BonusData.LifeTime;
-            _lifeTimer = new TimeRemaining(LifeTimer, _lifeTime);
-            _icon = BonusData.Icon;            
-            _prefab = BonusData.Prefab;            
+            _prefab = BonusData.prefab;
+            _type = BonusData.Type;
         }
 
-        protected virtual void LifeTimer()
+        public virtual void Spawn(Transform transform)
         {
-            Object.Destroy(_bonus.gameObject);
-            Services.Instance.LevelService.ActiveBonus.Remove(this);
-        }
-
-        public virtual void Spawn(Vector3 position)
-        {
-            _bonus = Object.Instantiate(_prefab, position, Quaternion.identity);
-            Services.Instance.LevelService.ActiveBonus.Add(this);
-            _lifeTimer.AddTimeRemaining();
-        }
-
-        public virtual Transform GetTransform()
-        {
-            return _bonus;
+            GameObject.Instantiate(_prefab,transform.position,Quaternion.identity);
+            Debug.Log("Created");
         }
 
         public virtual void Use()
         {
-            _lifeTimer.RemoveTimeRemaining();
+            Object.Destroy(_prefab);
             Services.Instance.LevelService.ActiveBonus.Remove(this);
-            Object.Destroy(_bonus.gameObject);
         }
         
         #endregion

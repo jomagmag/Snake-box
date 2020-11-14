@@ -1,38 +1,35 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 
 namespace Snake_box
 {
     public class BonusSpawnController : IInitialization ///отвечает за место и время спауна
     {
+
         #region PrivateData
 
-        private GameObject[] _spawnPoints;//точки споуна бонусов
-        private TimeRemaining _spawnInvoker;
-        private BonusList _bonuses;//список всех бонусов
+        private List<Transform> _spawnPoints= new List<Transform>();//точки споуна бонусов
+        private TimeRemaining _spawnInvoker; //список всех бонусов
         private int _spawnTime= 25;       
 
         #endregion
-
 
         #region Methods
 
         public void Initialization()
         {
-            if (_spawnPoints == null)
-            {
-                _spawnPoints = GameObject.FindGameObjectsWithTag(TagManager.GetTag(TagType.BonusPoint));
-            }
-            _spawnInvoker = new TimeRemaining(SpawnBonus, _spawnTime, true);
+            _spawnInvoker = new TimeRemaining(SpawnBonus,2);
             _spawnInvoker.AddTimeRemaining();
-            _bonuses = new BonusList();
         }        
 
         private void SpawnBonus()
         {
-            int random = Random.Range(0, _bonuses._bonusList.Count);
-            int point = Random.Range(0, _spawnPoints.Length);
-            _bonuses._bonusList[random].Spawn(_spawnPoints[point].transform.position);         ///загружается 3(random) бонус в 5(point) точке   
+            _spawnPoints.Add(GameObject.FindGameObjectWithTag("BonusPoint").transform);
+            Debug.Log("SpawnBonus");
+            BaseBonus bonus = new TurretBonus(Data.Instance.TurretBonusData);
+            Services.Instance.LevelService.ActiveBonus.Add(bonus);
+            bonus.Spawn(_spawnPoints[0]);
         }
 
         #endregion

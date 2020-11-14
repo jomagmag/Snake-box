@@ -42,7 +42,7 @@ namespace Snake_box
             //_executeControllers.Add(new FlyingIconsController());
             _executeControllers.Add(new TrapsController());
 
-            //_initializations.Add(new BonusSpawnController());
+            _initializations.Add(new BonusSpawnController());
 
             _cleanUps = new List<ICleanUp>();
             _cleanUps.Add(new TimeRemainingCleanUp());
