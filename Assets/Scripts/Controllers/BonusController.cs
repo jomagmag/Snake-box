@@ -60,7 +60,6 @@ namespace Snake_box
                                 {
                                     var bonus = _bonuslist[i] as BombBonus;
                                     bonus.Use();
-                                    Debug.Log("Bomb");
                                 }
 
                                     break;
@@ -68,14 +67,12 @@ namespace Snake_box
                                 {
                                     var bonus = _bonuslist[i] as RapidFireBonus;
                                     bonus.Use();
-                                    Debug.Log("Rapid");
                                 }
                                     break;
                                 case BonusType.Heal:
                                 {
                                     var bonus = _bonuslist[i] as HealBonus;
                                     bonus.Use();
-                                    Debug.Log("Heal");
                                 }
                                     break;
                                 default:

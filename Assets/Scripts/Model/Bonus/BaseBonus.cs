@@ -28,7 +28,6 @@ namespace Snake_box
             _prefab = BonusData.prefab;
             _type = BonusData.Type;
             CheckRadius = BonusData.Radius;
-            Debug.Log(CheckRadius);
         }
 
         public virtual void Spawn(Transform transform)
