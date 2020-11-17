@@ -14,7 +14,7 @@ namespace Snake_box
 
         #region Properties
         public GameObject _gameObject { get; private set; }
-        public float Radius { get; private set; }
+        public float CheckRadius { get; private set; }
 
         public BonusType Type => _type;
         
@@ -27,13 +27,13 @@ namespace Snake_box
         {
             _prefab = BonusData.prefab;
             _type = BonusData.Type;
-            Radius = BonusData.Radius;
+            CheckRadius = BonusData.Radius;
+            Debug.Log(CheckRadius);
         }
 
         public virtual void Spawn(Transform transform)
         {
             _gameObject = GameObject.Instantiate(_prefab,transform.position,Quaternion.identity);
-            Debug.Log("Created");
         }
 
         public virtual void Use()

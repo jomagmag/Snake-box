@@ -37,5 +37,8 @@ MonoBehaviour:
   _spriteDictionaryDataPath: Sprites/SpriteDictionary
   _TrapListDataPath: Traps/TrapsList
   _TurredBonusDataPath: Bonus/TurretBonusData
+  _BombBonusDataPath: Bonus/BombBonusData
+  _RapidFireBonusDataPath: Bonus/RapidFireBonusData
+  _HealBonusDataPath: Bonus/HealBonusData
   _allSpawnListsDataPath: EnemySpawn/AllSpawnListsData
   _levelPrefabsDataPath: Level/LevelPrefabs

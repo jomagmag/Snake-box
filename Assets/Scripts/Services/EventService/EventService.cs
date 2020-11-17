@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace Snake_box
 {
@@ -13,6 +14,8 @@ namespace Snake_box
         public event Action TurretUpgraded;
         public event Action TurretAdded;
         public event Action TurretLevelUped;
+
+        public event Action<Transform> SpawnedBonus;
 
         #endregion
 
@@ -54,6 +57,8 @@ namespace Snake_box
         public void TurretUpgrade() => TurretUpgraded?.Invoke();
 
         public void TurretLevelUp() => TurretLevelUped?.Invoke();
+
+        public void SpawnBonus(Transform transform) => SpawnedBonus?.Invoke(transform);
 
         #endregion
     }

@@ -7,6 +7,7 @@ namespace Snake_box
     public class BombBonusData : BonusData
     {
         public GameObject particle;
+        public bool UseParticle;
         public float particleTimer;
         public float explosionRadius;
         public float explosionDamage;

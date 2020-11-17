@@ -3,7 +3,7 @@
     public interface IModifiersSet
     {
         void SetTurretLevel(int newTurretLevel);
-        void SetFireRate(int newFireRate);
+        void SetFireRate(float newFireRate);
         void SetProjectileDamage(int newProjectileDamage);
         void SetDecreaseUpgradeCost(int newDecreaseUpgradeCost);
         void SetDecreaseBuyCost(int newDecreaseBuyCost);

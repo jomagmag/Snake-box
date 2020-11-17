@@ -9,14 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7e66e7205bf4c6aaeb60fd1a51e3871, type: 3}
-  m_Name: BombBonusData
+  m_Script: {fileID: 11500000, guid: 58a9fce2890f4fc98fdea6d78205085f, type: 3}
+  m_Name: HealBonusData
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1949828369876463914, guid: a82cf30fdfd7c95439f7f5c735e28aea, type: 3}
-  Type: 2
+  prefab: {fileID: 1949828369876463914, guid: fde0a8aa500eac04eaf1c8991f1edff7, type: 3}
+  Type: 4
   Radius: 2
-  particle: {fileID: 0}
-  UseParticle: 0
-  particleTimer: 0
-  explosionRadius: 10
-  explosionDamage: 999

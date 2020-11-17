@@ -273,6 +273,8 @@
             <e p="Bonus" t="Include">
               <e p="BombBonusData.cs" t="Include" />
               <e p="BonusData.cs" t="Include" />
+              <e p="HealBonusData.cs" t="Include" />
+              <e p="RapidFireBonusData.cs" t="Include" />
               <e p="TurretBonusData.cs" t="Include" />
             </e>
             <e p="Character" t="Include">
@@ -385,6 +387,8 @@
             <e p="Bonus" t="Include">
               <e p="BaseBonus.cs" t="Include" />
               <e p="BombBonus.cs" t="Include" />
+              <e p="HealBonus.cs" t="Include" />
+              <e p="RapidFireBonus.cs" t="Include" />
               <e p="TurretBonus.cs" t="Include" />
             </e>
             <e p="Character" t="Include">
