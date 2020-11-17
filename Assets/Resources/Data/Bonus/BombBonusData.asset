@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c74171c118ea4e90963851547bdde1c9, type: 3}
-  m_Name: TurretBonusData
+  m_Script: {fileID: 11500000, guid: a7e66e7205bf4c6aaeb60fd1a51e3871, type: 3}
+  m_Name: BombBonusData
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1949828369876463914, guid: fde0a8aa500eac04eaf1c8991f1edff7, type: 3}
-  Type: 1
-  Radius: 2
-  PercentageA: 25
-  PercentageB: 5
+  prefab: {fileID: 0}
+  Type: 0
+  Radius: 0
+  ExplosionRadius: 0
+  ExplosionDamage: 0

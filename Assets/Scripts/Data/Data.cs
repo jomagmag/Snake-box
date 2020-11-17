@@ -36,6 +36,9 @@ namespace Snake_box
         [SerializeField] private string _spriteDictionaryDataPath;
         [SerializeField] private string _TrapListDataPath;
         [SerializeField] private string _TurredBonusDataPath;
+        [SerializeField] private string _BombBonusDataPath;
+        [SerializeField] private string _RapidFireBonusDataPath;
+        [SerializeField] private string _HealBonusDataPath;
         [SerializeField] private string _allSpawnListsDataPath;
         [SerializeField] private string _levelPrefabsDataPath;
         private static MainBuildData _mainBuildData;
@@ -59,6 +62,9 @@ namespace Snake_box
         private static SpriteDictionary _spriteDictonary;
         private static TrapList _trapList;
         private static TurretBonusData _turretBonusData;
+        private static RapidFireBonusData _rapidFireBonusData;
+        private static HealBonusData _healBonusData;
+        private static BombBonusData _bombBonusData;
         private static readonly Lazy<Data> _instance = new Lazy<Data>(() => Load<Data>("Data/" + typeof(Data).Name));
         
         #endregion
@@ -115,6 +121,45 @@ namespace Snake_box
                 }
 
                 return _turretBonusData;
+            }
+        }
+        
+        public BombBonusData BombBonusData
+        {
+            get
+            {
+                if (_bombBonusData == null)
+                {
+                    _bombBonusData = Load<BombBonusData>("Data/" + Instance._BombBonusDataPath);
+                }
+
+                return _bombBonusData;
+            }
+        }
+        
+        public RapidFireBonusData RapidFireBonusData
+        {
+            get
+            {
+                if (_rapidFireBonusData == null)
+                {
+                    _rapidFireBonusData = Load<RapidFireBonusData>("Data/" + Instance._RapidFireBonusDataPath);
+                }
+
+                return _rapidFireBonusData;
+            }
+        }
+        
+        public HealBonusData HealBonusData
+        {
+            get
+            {
+                if (_healBonusData == null)
+                {
+                    _healBonusData = Load<HealBonusData>("Data/" + Instance._HealBonusDataPath);
+                }
+
+                return _healBonusData;
             }
         }
 

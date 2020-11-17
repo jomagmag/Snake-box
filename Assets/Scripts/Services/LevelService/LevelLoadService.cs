@@ -20,7 +20,6 @@ namespace Snake_box
             //_currentLevel = GameObject.Instantiate(Data.Instance.LevelData.GetPrefab(levelType));
             Services.Instance.LevelService.CurrentLevel = levelType;
             Time.timeScale = 1;
-            Debug.Log(LevelLoaded.Target);
             LevelLoaded?.Invoke();
         }
 

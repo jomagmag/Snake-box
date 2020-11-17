@@ -12,6 +12,14 @@ namespace Snake_box
 
         #endregion
 
+        #region Properties
+        public GameObject _gameObject { get; private set; }
+        public float Radius { get; private set; }
+
+        public BonusType Type => _type;
+        
+
+        #endregion
 
         #region Methods
 
@@ -19,20 +27,21 @@ namespace Snake_box
         {
             _prefab = BonusData.prefab;
             _type = BonusData.Type;
+            Radius = BonusData.Radius;
         }
 
         public virtual void Spawn(Transform transform)
         {
-            GameObject.Instantiate(_prefab,transform.position,Quaternion.identity);
+            _gameObject = GameObject.Instantiate(_prefab,transform.position,Quaternion.identity);
             Debug.Log("Created");
         }
 
         public virtual void Use()
         {
-            Object.Destroy(_prefab);
             Services.Instance.LevelService.ActiveBonus.Remove(this);
+            Object.Destroy(_gameObject);
         }
-        
+
         #endregion
 
     }

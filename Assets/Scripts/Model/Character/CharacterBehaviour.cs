@@ -218,6 +218,10 @@ namespace Snake_box
             return null;
         }
 
+
+        public int GetActiveTurret() => 4-_pointsTurret.Count;
+        public int GetTurretPoints() => _pointsTurret.Count;
+
         public void SpeedNullifier()
         {
             _speed = 0;

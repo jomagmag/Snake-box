@@ -4,6 +4,8 @@
     {
         None = 0,
         Turret = 1,
-        Misc = 2
+        Bomb = 2,
+        RapidFire = 3,
+        Heal = 4
     }
 }
