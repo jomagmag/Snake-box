@@ -2376,7 +2376,7 @@ NavMeshAgent:
   m_Speed: 20
   m_Acceleration: Infinity
   avoidancePriority: 50
-  m_AngularSpeed: 0
+  m_AngularSpeed: 100
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -2384,7 +2384,7 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 0
+  m_ObstacleAvoidanceType: 1
 --- !u!1 &1355678761320942
 GameObject:
   m_ObjectHideFlags: 0
