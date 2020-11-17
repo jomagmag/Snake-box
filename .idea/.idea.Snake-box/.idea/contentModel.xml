@@ -242,8 +242,7 @@
             <e p="AssetsPathScreen.cs" t="Include" />
           </e>
           <e p="Controllers" t="Include">
-            <e p="BonusFireController.cs" t="Include" />
-            <e p="BonusSpawnController.cs" t="Include" />
+            <e p="BonusController.cs" t="Include" />
             <e p="CharacterController.cs" t="Include" />
             <e p="Controllers.cs" t="Include" />
             <e p="EnemyController.cs" t="Include" />
@@ -272,13 +271,11 @@
               <e p="BlockSnakeData.cs" t="Include" />
             </e>
             <e p="Bonus" t="Include">
-              <e p="BonusCoinsData.cs" t="Include" />
+              <e p="BombBonusData.cs" t="Include" />
               <e p="BonusData.cs" t="Include" />
-              <e p="BonusFireData.cs" t="Include" />
-              <e p="BonusHpSnakeData.cs" t="Include" />
-              <e p="BonusSpeedData.cs" t="Include" />
-              <e p="NewBehaviourScript.cs" t="Include" />
-              <e p="NewBehaviourScript1.cs" t="Include" />
+              <e p="HealBonusData.cs" t="Include" />
+              <e p="RapidFireBonusData.cs" t="Include" />
+              <e p="TurretBonusData.cs" t="Include" />
             </e>
             <e p="Character" t="Include">
               <e p="CharacterData.cs" t="Include" />
@@ -389,12 +386,10 @@
             </e>
             <e p="Bonus" t="Include">
               <e p="BaseBonus.cs" t="Include" />
-              <e p="BonusBullet.cs" t="Include" />
-              <e p="BonusCoins.cs" t="Include" />
-              <e p="BonusFire.cs" t="Include" />
-              <e p="BonusHpSnake.cs" t="Include" />
-              <e p="BonusList.cs" t="Include" />
-              <e p="BonusSpeed.cs" t="Include" />
+              <e p="BombBonus.cs" t="Include" />
+              <e p="HealBonus.cs" t="Include" />
+              <e p="RapidFireBonus.cs" t="Include" />
+              <e p="TurretBonus.cs" t="Include" />
             </e>
             <e p="Character" t="Include">
               <e p="BaseCharacter.cs" t="Include" />
@@ -484,6 +479,9 @@
           <e p="Services" t="Include">
             <e p="CameraService" t="Include">
               <e p="CameraServices.cs" t="Include" />
+            </e>
+            <e p="EventService" t="Include">
+              <e p="EventService.cs" t="Include" />
             </e>
             <e p="FlyingIconsService.cs" t="Include" />
             <e p="InputService" t="Include">

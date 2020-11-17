@@ -8,5 +8,6 @@ namespace Snake_box
         [SerializeField] private SingleEnemySpawnData[] _enemies;
 
         public SingleEnemySpawnData[] Enemies => _enemies;
+        public float BonusChance;
     } 
 }

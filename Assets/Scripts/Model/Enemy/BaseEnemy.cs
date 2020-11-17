@@ -25,6 +25,8 @@ namespace Snake_box
         protected bool _isNeedNavMeshUpdate = false;
         protected bool _isValidTarget;
         protected int _killReward;
+        protected float _bonusChance;
+        protected bool HasBonus;
         private TimeRemaining _stoping;
 
         #endregion
@@ -42,6 +44,8 @@ namespace Snake_box
             _meleeHitRange = data.MeleeHitRange;
             _killReward = data.KillReward;
             _hitCooldown = data.HitCooldown;
+            _bonusChance = Data.Instance.LevelData.GetEnemySpawnList(Services.Instance.LevelService.CurrentLevel)
+                .BonusChance;
             _stoping = new TimeRemaining(StopDancing, 1f);
         }
 
@@ -51,6 +55,8 @@ namespace Snake_box
         #region Properties
 
         public EnemyType Type { get; protected set; }
+
+        public ArmorType ArmorType { get; protected set; }
 
         #endregion
 
@@ -66,12 +72,15 @@ namespace Snake_box
 
             _target = GameObject.FindGameObjectWithTag(TagManager.GetTag(TagType.Player))
                 .transform; //_levelService.Target.transform; //вернуть цель после ролика
-            _enemyObject = GameObject.Instantiate(_prefab, position+offset(), Quaternion.identity);
+            _enemyObject = GameObject.Instantiate(_prefab, position + offset(), Quaternion.identity);
             _navMeshAgent = _enemyObject.GetComponentInChildren<NavMeshAgent>();
             _navMeshAgent.speed = _speed;
             _transform = _enemyObject.transform;
             _isNeedNavMeshUpdate = true;
             _isValidTarget = true;
+            var rnd = Random.Range(0, 101);
+            if (rnd < _bonusChance)
+                HasBonus = true;
             if (!_levelService.ActiveEnemies.Contains(this))
                 _levelService.ActiveEnemies.Add(this);
         }
@@ -79,7 +88,7 @@ namespace Snake_box
 
         private Vector3 offset()
         {
-            return new Vector3(Random.Range(-2,2),0,Random.Range(-2,2));
+            return new Vector3(Random.Range(-2, 2), 0, Random.Range(-2, 2));
         }
 
         public virtual void OnUpdate()
@@ -167,8 +176,17 @@ namespace Snake_box
             _hp -= damage;
             if (_hp <= 0)
             {
+                if (HasBonus)
+                {
+                    SpawnBonus();
+                }
                 Destroy();
             }
+        }
+
+        private void SpawnBonus()
+        {
+            Services.Instance.EventService.SpawnBonus(_enemyObject.transform);
         }
 
         public void Destroy()

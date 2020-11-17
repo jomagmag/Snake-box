@@ -29,7 +29,7 @@ namespace Snake_box
         public abstract TurretBaseAbs Build(TurretPreferences turretPreferences);
 
         public void SetTurretLevel(int newTurretLevel) => TurretLevel = newTurretLevel;
-        public void SetFireRate(int newFireRate) => FireRateMod = newFireRate;
+        public void SetFireRate(float newFireRate) => FireRateMod = newFireRate;
         public void SetProjectileDamage(int newProjectileDamage) => ProjectileDamageMod = newProjectileDamage;
         public void SetDecreaseUpgradeCost(int newDecreaseUpgradeCost) => DecreaseUpgradeCost = newDecreaseUpgradeCost;
         public void SetDecreaseBuyCost(int newDecreaseBuyCost) => DecreaseBuyCost = newDecreaseBuyCost;

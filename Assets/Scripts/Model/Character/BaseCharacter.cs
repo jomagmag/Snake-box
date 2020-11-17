@@ -63,6 +63,11 @@ namespace Snake_box
             Services.Instance.LevelService.EndLevel();
         }
 
+        public void Heal()
+        {
+            _currentSnakeHp = _baseSnakeHp;
+        }
+
         #endregion
 
     }

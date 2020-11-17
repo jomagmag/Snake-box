@@ -28,6 +28,8 @@ namespace Snake_box
         public LevelLoadService LevelLoadService { get; private set; }
         public FlyingIconsService FlyingIconsService { get; private set; }
         
+        public EventService EventService { get; private set; }
+        
         #endregion
         
         
@@ -42,7 +44,7 @@ namespace Snake_box
             SaveData = new PrefsService();
             JsonService = new JsonService();
             LevelService = new LevelService();
-            //FlyingIconsService = new FlyingIconsService();
+            EventService = new EventService();
         }
         
         #endregion
