@@ -4841,10 +4841,10 @@ MonoBehaviour:
   currenttime: 0
   starting: 0
   sectiontiming:
-  - 8
-  - 14
-  - 22
-  - 29
+  - 1e+10
+  - 100000000
+  - 1e+9
+  - 1e+10
 --- !u!1 &958510400 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8631733104541547205, guid: a71fb2586b449a543b8ca607f4537b63,
