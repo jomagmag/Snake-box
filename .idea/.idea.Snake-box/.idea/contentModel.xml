@@ -295,7 +295,9 @@
             </e>
             <e p="EnemySpawn" t="Include">
               <e p="EnemySpawnList.cs" t="Include" />
+              <e p="EnemySpawnSettingsData.cs" t="Include" />
               <e p="SingleEnemySpawnData.cs" t="Include" />
+              <e p="WaveSettingsData.cs" t="Include" />
             </e>
             <e p="Enviroment" t="Include">
               <e p="BaseTrapsData.cs" t="Include" />

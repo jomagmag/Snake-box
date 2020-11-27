@@ -41,6 +41,8 @@ namespace Snake_box
         [SerializeField] private string _HealBonusDataPath;
         [SerializeField] private string _allSpawnListsDataPath;
         [SerializeField] private string _levelPrefabsDataPath;
+        [SerializeField] private string _WaveSettingsDataPath;
+        [SerializeField] private string _EnemySpawnSettingsDataPath;
         private static MainBuildData _mainBuildData;
         private static PointerData _pointerData;
         private static ShakesData _shake;
@@ -65,6 +67,8 @@ namespace Snake_box
         private static RapidFireBonusData _rapidFireBonusData;
         private static HealBonusData _healBonusData;
         private static BombBonusData _bombBonusData;
+        private static WaveSettingsData _waveSettingsData;
+        private static EnemySpawnSettingsData _enemySpawnSettingsData;
         private static readonly Lazy<Data> _instance = new Lazy<Data>(() => Load<Data>("Data/" + typeof(Data).Name));
         
         #endregion
@@ -390,6 +394,34 @@ namespace Snake_box
                 return _trapList;
             }
         }
+
+
+        public WaveSettingsData WaveSettingsData
+        {
+            get
+            {
+                if (_waveSettingsData == null)
+                {
+                    _waveSettingsData = Load<WaveSettingsData>("Data/" + Instance._WaveSettingsDataPath);
+                }
+
+                return _waveSettingsData;
+            }
+        }
+
+        public EnemySpawnSettingsData EnemySpawnSettingsData
+        {
+            get
+            {
+                if (_enemySpawnSettingsData == null)
+                {
+                    _enemySpawnSettingsData = Load<EnemySpawnSettingsData>("Data/" + Instance._EnemySpawnSettingsDataPath);
+                }
+
+                return _enemySpawnSettingsData;
+            }
+        }
+
 
 
         #endregion

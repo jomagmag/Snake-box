@@ -26,7 +26,8 @@ namespace Snake_box
         private readonly LevelData _levelData;
         public CharacterBehaviour CharacterBehaviour;
         public List <BlockSnake> BlockSnakes= new List< BlockSnake>();
-        public MainBuild MainBuilds = new MainBuild();
+//        public MainBuild MainBuilds = new MainBuild();
+        private int _currentWave;
 
         #endregion
 
@@ -38,6 +39,8 @@ namespace Snake_box
         public bool IsLevelSpawnEnded { get; set; }
         public bool IsTargetDestroed { get; set; }
         public bool IsSnakeAlive { get; set; }
+
+        public int CurrentWave => _currentWave;
 
         #endregion
 
@@ -51,6 +54,7 @@ namespace Snake_box
             IsLevelSpawnEnded = false;
             IsTargetDestroed = false;
             Services.Instance.LevelLoadService.LevelLoaded += LevelStart;
+            Services.Instance.EventService.WaveEnded += WaveCounterInc;
         }
 
         #endregion
@@ -112,6 +116,8 @@ namespace Snake_box
         {
             Target = GameObject.FindGameObjectWithTag(TagManager.GetTag(TagType.Target));
         }
+
+        public void WaveCounterInc() => _currentWave++;
 
         public void SetPanelEndLevelActive(bool isActive) => ScreenInterface.GetInstance().ScreenFactory.GetGameMenu().SetPanelEndLevelActive(isActive);
 
