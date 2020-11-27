@@ -34,15 +34,14 @@ namespace Snake_box
 
         public EnemySpawnControler()
         {
-            Debug.Log("subscribe");
             Services.Instance.LevelLoadService.LevelLoaded += GetAllSpawnPoints;
             Services.Instance.EventService.WaveStarted += GetWaveData;
-            Services.Instance.EventService.WaveEnded += EnemyPointsInc; 
+            Services.Instance.EventService.WaveEnded += EnemyPointsInc;
         }
 
         #endregion
-        
-        
+
+
         #region IExecute
 
         public void Execute()
@@ -61,7 +60,7 @@ namespace Snake_box
 
         #endregion
 
-        
+
         #region IInitialization
 
         public void Initialization()
@@ -100,14 +99,12 @@ namespace Snake_box
             {
                 _spawnPoints[spawnPointIds[i]] = spawnPoints[i].transform.position;
             }*/
-            Debug.Log("Init EnemySpawnController");
             _levelService = Services.Instance.LevelService;
             _waveSettingsData = Data.Instance.WaveSettingsData;
             _currentEnemyPoints = _waveSettingsData.BasicEnemyPoints;
             _bonusEnemyPoints = _waveSettingsData.BonusEnemyPoints;
             _enemySettings = Data.Instance.EnemySpawnSettingsData.EnemySettings;
             FillWaveWeight();
-
         }
 
         #endregion
@@ -117,25 +114,23 @@ namespace Snake_box
 
         private void GetAllSpawnPoints()
         {
-            Debug.Log("GettingAllSpawnPoints");
             foreach (var points in GameObject.FindGameObjectsWithTag(TagManager.GetTag(TagType.Spawn)))
             {
                 _spawnPoints.Add(points.transform.position);
-                Debug.Log(points.transform.position);
             }
         }
 
         private void GetWaveData()
         {
-            Debug.Log("GetWaveData");
             if (_waveSettingsData.Waves.Count > _levelService.CurrentWave)
             {
-                Debug.Log("GettingWaveData");
+                Debug.Log(_levelService.CurrentWave);
                 _currentWave = _waveSettingsData.Waves[_levelService.CurrentWave];
                 _currentWavePointsWeight.Clear();
                 _currentSpawnCount = 0;
                 GetActivePoints();
                 FillEnemyWeight();
+                Debug.Log("WaveWeight = " + _currentWave.WaveWeight);
                 SpawnNextWave();
             }
         }
@@ -152,6 +147,10 @@ namespace Snake_box
         {
             int count = 0;
             _currentWavePointsWeight.Add(count, _currentWave.WaveWeight);
+            foreach (var VARIABLE in _currentWavePointsWeight)
+            {
+                Debug.Log("key = "+VARIABLE.Key+" Valuse = " + VARIABLE.Value);
+            }
             if (_currentWave.SuvWaves != null)
                 for (count = 1; count < _currentWave.SuvWaves.Count + 1; count++)
                 {
@@ -164,23 +163,26 @@ namespace Snake_box
             int weightSum = 0;
             int tempPoints = _currentEnemyPoints;
             _currentSpawnPoints = 0;
-            foreach (var weight in _currentWavePointsWeight.Keys)
+            foreach (var weight in _currentWavePointsWeight.Values)
             {
                 weightSum += weight;
             }
-
-            while (tempPoints > weightSum)
-            {
-                for (int i = 0; i < _currentWavePointsWeight.Count; i++)
+            Debug.Log(weightSum);
+            if (weightSum > 0)
+                while (tempPoints > weightSum)
                 {
-                    if (i == _currentSpawnCount)
+                    for (int i = 0; i < _currentWavePointsWeight.Count; i++)
                     {
-                        _currentSpawnPoints += _currentWavePointsWeight[i];
-                    }
+                        if (i == _currentSpawnCount)
+                        {
+                            _currentSpawnPoints += _currentWavePointsWeight[i];
+                        }
 
-                    tempPoints -= _currentWavePointsWeight[i];
+                        tempPoints -= _currentWavePointsWeight[i];
+                    }
                 }
-            }
+
+            Debug.Log("exitWhile");
         }
 
 
@@ -207,7 +209,7 @@ namespace Snake_box
         private void SpawnWave()
         {
             var activeEnemyList =
-                _enemySettings.Where(enemy => enemy.EnemyMinWave < _levelService.CurrentWave).ToList();
+                _enemySettings.Where(enemy => enemy.EnemyMinWave <= _levelService.CurrentWave).ToList();
             var enemySumWeight = 0;
             List<EnemySpawnWeinght> enemySpawnWeinghts = new List<EnemySpawnWeinght>();
             enemySpawnWeinghts.Add(new EnemySpawnWeinght()

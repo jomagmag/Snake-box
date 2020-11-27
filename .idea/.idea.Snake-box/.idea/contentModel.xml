@@ -380,6 +380,8 @@
             </e>
             <e p="Struct" t="Include">
               <e p="EnemyCount.cs" t="Include" />
+              <e p="SubWave.cs" t="Include" />
+              <e p="Wave.cs" t="Include" />
             </e>
           </e>
           <e p="Model" t="Include">

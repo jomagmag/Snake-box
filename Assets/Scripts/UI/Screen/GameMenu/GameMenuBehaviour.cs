@@ -23,7 +23,7 @@ namespace Snake_box
         [SerializeField] private Button [] _buttonPlus;
         [SerializeField] private Button[] _buttonTurretsType;
         [SerializeField] private Text _textEndGame;
-        CharacterBehaviour _characterBehaviour = Services.Instance.LevelService.CharacterBehaviour;
+        private CharacterBehaviour _characterBehaviour;
         private int _selectButtonsIndex;
         private bool _isPause;
 
@@ -31,6 +31,11 @@ namespace Snake_box
       
 
         #region UnityMethods
+
+        protected override void Awake()
+        {
+            
+        }
 
         //private void OnEnable()
         //{
@@ -79,7 +84,7 @@ namespace Snake_box
 
         private void SnakeHeadButton()
         {
-            _characterBehaviour.UseBonus();
+            //_characterBehaviour.UseBonus();
         }
 
         private void AddTurret(int i)

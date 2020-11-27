@@ -19,9 +19,9 @@
     <explicitExcludes>
       <Path>.git</Path>
       <Path>.idea</Path>
+      <Path>Builds</Path>
       <Path>Library</Path>
       <Path>Recordings</Path>
-      <Path>Temp</Path>
       <Path>UIElementsSchema</Path>
       <Path>obj</Path>
     </explicitExcludes>
