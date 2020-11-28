@@ -45,7 +45,7 @@ MonoBehaviour:
     StartLevel: 1
     BaseLevelModifier: 2
     Range: 20
-    Cooldown: 432
+    Cooldown: 150
     UpdatePrice: 134
     BuyPrice: 134
     ThumbnailPrefab: {fileID: 269974265680797856, guid: 200f07bd5d78bcd4cb26d25e63b7b204,
