@@ -8,7 +8,8 @@ namespace Snake_box
     {
         public ArmorType ArmorType;
         public GameObject Prefab;
-        public float Hp;
+        public int Hp;
+        public int HpBonusPerWave; 
         public float Speed;
         public float Damage;
         public float SizePack;

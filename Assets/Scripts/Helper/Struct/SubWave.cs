@@ -7,6 +7,6 @@ namespace Snake_box
     {
         [Min(0)] public int SubWaveWeight;
         [Min(0)] public int SubWaveTiming;
-        [Min(1)] public int SubWaveActiveSpawnPulls;
+        [Min(1)] public int SubWaveActiveSpawnPoints;
     }
 }

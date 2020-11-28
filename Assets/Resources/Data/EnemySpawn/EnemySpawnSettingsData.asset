@@ -18,6 +18,6 @@ MonoBehaviour:
     EnemyWeight: 10
     EnemyMinWave: 0
   - EnemyType: 2
-    EnemySpawnCost: 20
+    EnemySpawnCost: 10
     EnemyWeight: 10
     EnemyMinWave: 0

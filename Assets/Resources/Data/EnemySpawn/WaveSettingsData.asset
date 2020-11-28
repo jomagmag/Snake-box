@@ -12,18 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7651d318c224e5fab66f014fa87c264, type: 3}
   m_Name: WaveSettingsData
   m_EditorClassIdentifier: 
-  BasicEnemyPoints: 20
-  BonusEnemyPoints: 200
+  BasicEnemyPoints: 100
+  BonusEnemyPoints: 100
   Waves:
-  - ActiveSpawnPoints: 1
-    WaveWeight: 1
-    WaveTiming: 1.11
-    SuvWaves: []
-  - ActiveSpawnPoints: 0
-    WaveWeight: 0
-    WaveTiming: 0
-    SuvWaves: []
-  - ActiveSpawnPoints: 0
-    WaveWeight: 0
-    WaveTiming: 0
-    SuvWaves: []
+  - ActiveSpawnPoints: 3
+    WaveWeight: 10
+    WaveTiming: 20
+    SuvWaves:
+    - SubWaveWeight: 50
+      SubWaveTiming: 5
+      SubWaveActiveSpawnPoints: 3
+    - SubWaveWeight: 50
+      SubWaveTiming: 5
+      SubWaveActiveSpawnPoints: 3
+  - ActiveSpawnPoints: 3
+    WaveWeight: 20
+    WaveTiming: 10
+    SuvWaves:
+    - SubWaveWeight: 20
+      SubWaveTiming: 5
+      SubWaveActiveSpawnPoints: 3

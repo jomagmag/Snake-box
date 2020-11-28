@@ -36,6 +36,7 @@ namespace Snake_box
             TurretAdded += delegate { };
             TurretUpgraded += delegate { };
             TurretLevelUped += delegate { };
+            WaveEnded += WaveStart;
         }
 
         #endregion
