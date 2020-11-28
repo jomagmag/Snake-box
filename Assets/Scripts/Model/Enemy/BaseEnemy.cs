@@ -81,7 +81,6 @@ namespace Snake_box
             var rnd = Random.Range(0, 101);
             if (rnd < _bonusChance)
                 HasBonus = true;
-            Debug.Log(HasBonus);
             if (!_levelService.ActiveEnemies.Contains(this))
                 _levelService.ActiveEnemies.Add(this);
         }
@@ -187,7 +186,6 @@ namespace Snake_box
 
         private void SpawnBonus()
         {
-            Debug.Log("spawnbonus");
             Services.Instance.EventService.SpawnBonus(_enemyObject.transform);
         }
 

@@ -196,7 +196,6 @@ namespace Snake_box
         private void SpawnNextWave()
         {
             CalcCurrentPoints();
-            Debug.Log("Spawning Main Wave");
             SpawnWave();
             _subWaveSpawned = 0;
             _currentSpawnCount++;
@@ -204,7 +203,6 @@ namespace Snake_box
             {
                 _nextSubWave = new TimeRemaining(SpawnSubWave, _currentWave.SuvWaves[_subWaveSpawned].SubWaveTiming);
                 _nextSubWave.AddTimeRemaining();
-                Debug.Log("NextSubWave in " + _currentWave.SuvWaves[_subWaveSpawned].SubWaveTiming + " Sec");
             }
 
             _nextWave = new TimeRemaining(Services.Instance.EventService.WaveEnd, _currentWave.WaveTiming);
@@ -247,8 +245,6 @@ namespace Snake_box
         {
             _activeEnemyList = _enemySettings.Where(enemy => enemy.EnemyMinWave <= _levelService.CurrentWave).ToList();
             _enemySumWeight = 0;
-            Debug.Log(_activeEnemyList[0].EnemyType);
-            Debug.Log(_activeEnemyList[0].EnemyWeight);
             _enemySpawnWeights.Add(new EnemySpawnWeight()
             {
                 _type = _activeEnemyList[0].EnemyType,
@@ -299,7 +295,6 @@ namespace Snake_box
             {
                 _nextSubWave = new TimeRemaining(SpawnSubWave, _currentWave.SuvWaves[_subWaveSpawned].SubWaveTiming);
                 _nextSubWave.AddTimeRemaining();
-                Debug.Log("NextSubWave in " + _currentWave.SuvWaves[_subWaveSpawned].SubWaveTiming + " Sec");
             }
         }
 
