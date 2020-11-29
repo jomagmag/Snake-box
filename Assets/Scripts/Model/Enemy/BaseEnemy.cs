@@ -38,7 +38,7 @@ namespace Snake_box
         {
             _prefab = data.Prefab;
             _speed = data.Speed;
-            _hp = data.Hp;
+            _hp = data.Hp+data.HpBonusPerWave*_levelService.CurrentWave;
             _damage = data.Damage;
             _armor = data.ArmorType;
             _meleeHitRange = data.MeleeHitRange;
@@ -131,8 +131,8 @@ namespace Snake_box
                 {
                     if (colliders[i].CompareTag(TagManager.GetTag(TagType.Target)))
                     {
-                        var mainBuilding = Services.Instance.LevelService.MainBuilds;
-                        mainBuilding.GetDamage(_damage);
+                        //var mainBuilding = Services.Instance.LevelService.MainBuilds;
+                        //mainBuilding.GetDamage(_damage);
                         if (_levelService.ActiveEnemies.Contains(this))
                             _levelService.ActiveEnemies.Remove(this);
                         Object.Destroy(_enemyObject);
@@ -198,6 +198,7 @@ namespace Snake_box
             //Services.Instance.FlyingIconsService.CreateFlyingMoney(_enemyObject.transform.position);
             if (_levelService.ActiveEnemies.Count == 0 && Services.Instance.LevelService.IsLevelSpawnEnded)
             {
+                Services.Instance.EventService.WaveEnd();
                 _levelService.EndLevel();
             }
         }

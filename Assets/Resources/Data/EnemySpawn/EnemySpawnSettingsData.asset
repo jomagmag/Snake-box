@@ -9,11 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab35c33e3734ce947aa73315299123e0, type: 3}
-  m_Name: EnemySpawnData
+  m_Script: {fileID: 11500000, guid: 19cf57760f734ca7a3c460eff6ca1275, type: 3}
+  m_Name: EnemySpawnSettingsData
   m_EditorClassIdentifier: 
-  _enemies:
-  - _enemyType: 1
-    _spawnTiming: 1
-    _spawnPointId: 0
-  BonusChance: 50
+  EnemySettings:
+  - EnemyType: 1
+    EnemySpawnCost: 10
+    EnemyWeight: 10
+    EnemyMinWave: 0
+  - EnemyType: 2
+    EnemySpawnCost: 10
+    EnemyWeight: 10
+    EnemyMinWave: 0

@@ -15,8 +15,8 @@ MonoBehaviour:
   prefab: {fileID: 1949828369876463914, guid: a82cf30fdfd7c95439f7f5c735e28aea, type: 3}
   Type: 2
   Radius: 2
-  particle: {fileID: 0}
-  UseParticle: 0
-  particleTimer: 0
+  particle: {fileID: 1290715649332758, guid: 587eaecaa621be74486f351c78b4f0a8, type: 3}
+  UseParticle: 1
+  particleTimer: 10
   explosionRadius: 10
   explosionDamage: 999

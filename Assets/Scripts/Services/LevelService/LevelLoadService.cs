@@ -21,6 +21,7 @@ namespace Snake_box
             Services.Instance.LevelService.CurrentLevel = levelType;
             Time.timeScale = 1;
             LevelLoaded?.Invoke();
+            Services.Instance.EventService.WaveStart();
         }
 
         public void ReloadLevel() => LoadLevel(Services.Instance.LevelService.CurrentLevel);
