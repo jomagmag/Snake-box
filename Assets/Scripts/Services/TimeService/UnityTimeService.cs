@@ -17,7 +17,7 @@ namespace Snake_box
 
         public UnityTimeService()
         {
-            Services.Instance.LevelLoadService.LevelLoaded += ResetLevelStartTime;
+            //Services.Instance.LevelLoadService.LevelLoaded += ResetLevelStartTime;
         }
 
         #endregion

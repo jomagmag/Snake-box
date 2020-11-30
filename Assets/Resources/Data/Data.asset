@@ -42,3 +42,5 @@ MonoBehaviour:
   _HealBonusDataPath: Bonus/HealBonusData
   _allSpawnListsDataPath: EnemySpawn/AllSpawnListsData
   _levelPrefabsDataPath: Level/LevelPrefabs
+  _WaveSettingsDataPath: EnemySpawn/WaveSettingsData
+  _EnemySpawnSettingsDataPath: EnemySpawn/EnemySpawnSettingsData

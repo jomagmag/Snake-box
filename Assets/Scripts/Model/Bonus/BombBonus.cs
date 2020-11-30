@@ -50,8 +50,7 @@ namespace Snake_box
                 particleObject = GameObject.Instantiate(particle,_gameObject.transform.position,Quaternion.identity);
                 _particleTimer.AddTimeRemaining();
             }
-            else
-                base.Use();
+            base.Use();
         }
 
         public void ParticleDestroy()

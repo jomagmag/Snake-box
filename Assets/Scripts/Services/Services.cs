@@ -37,14 +37,14 @@ namespace Snake_box
         
         private void Initialize()
         {
-            LevelLoadService = new LevelLoadService();
-            CameraServices = new CameraServices();
             TimeService = new UnityTimeService();
+            EventService = new EventService();
+            LevelLoadService = new LevelLoadService();
+            LevelService = new LevelService();
+            CameraServices = new CameraServices();
             PhysicsService = new PhysicsService(CameraServices);
             SaveData = new PrefsService();
             JsonService = new JsonService();
-            LevelService = new LevelService();
-            EventService = new EventService();
         }
         
         #endregion
