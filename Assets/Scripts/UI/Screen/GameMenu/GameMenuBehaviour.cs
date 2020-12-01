@@ -88,7 +88,7 @@ namespace Snake_box
             
             if (levelStarted)
             {
-                _wave.text = "Wave " + _service.CurrentWave + 1 + " Mobs " + _service.ActiveEnemies.Count;
+                _wave.text = "Wave " + (_service.CurrentWave + 1) + " Mobs " + _service.ActiveEnemies.Count;
             }
         }
 
