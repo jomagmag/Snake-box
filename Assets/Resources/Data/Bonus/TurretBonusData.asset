@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c74171c118ea4e90963851547bdde1c9, type: 3}
   m_Name: TurretBonusData
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1949828369876463914, guid: 1ccf2f16864b5cc4ab943e7ed8046654, type: 3}
+  prefab: {fileID: 6046927998559666816, guid: 8e8c9b0458efcd84fb83c414e2b35353, type: 3}
   Type: 1
   Radius: 2
   PercentageA: 25

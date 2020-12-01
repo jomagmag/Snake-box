@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84afb36fc2b14a2398c511b3c3ecc15f, type: 3}
   m_Name: RapidFireBonusData
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1949828369876463914, guid: 96f77962fcae7f84b879d8c0478b3759, type: 3}
+  prefab: {fileID: 8883754179622341722, guid: 4c6bf365ee3eba444b57900415443a7d, type: 3}
   Type: 3
   Radius: 2
   RapidFireMultiplier: 2

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e66e7205bf4c6aaeb60fd1a51e3871, type: 3}
   m_Name: BombBonusData
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1949828369876463914, guid: a82cf30fdfd7c95439f7f5c735e28aea, type: 3}
+  prefab: {fileID: 5426072673723998129, guid: c1342807b954bf6488a119fac4579d53, type: 3}
   Type: 2
   Radius: 2
   particle: {fileID: 1290715649332758, guid: 587eaecaa621be74486f351c78b4f0a8, type: 3}
   UseParticle: 1
   particleTimer: 10
-  explosionRadius: 10
+  explosionRadius: 25
   explosionDamage: 999
