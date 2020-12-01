@@ -25,8 +25,6 @@ namespace Snake_box
         {
             Events.WaveStarted += SpawnTurretBonus;
             Events.SpawnedBonus += SpawnBonus;
-            _spawnInvoker = new TimeRemaining(SpawnTurretBonus, 2);
-            _spawnInvoker.AddTimeRemaining();
             _characterBehaviour = Services.Instance.LevelService.CharacterBehaviour;
         }
 

@@ -37,6 +37,7 @@ namespace Snake_box
             TurretUpgraded += delegate { };
             TurretLevelUped += delegate { };
             WaveEnded += WaveStart;
+            TurretAdded += AddTurret;
         }
 
         #endregion
@@ -60,6 +61,15 @@ namespace Snake_box
         public void TurretLevelUp() => TurretLevelUped?.Invoke();
 
         public void SpawnBonus(Transform transform) => SpawnedBonus?.Invoke(transform);
+
+        public void AddTurret()
+        {
+            var point = Services.Instance.LevelService.CharacterBehaviour.GetPoint();
+            if (point != null)
+            {
+                Data.Instance.TurretData.AddNewWithParent(point);
+            }  
+        }
 
         #endregion
     }
