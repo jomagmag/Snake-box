@@ -18,6 +18,7 @@ namespace Snake_box
 
         private void Awake()
         {
+            _controllers = new Controllers();
             Services.Instance.LevelLoadService.LevelLoaded += Initialize;
             Services.Instance.LevelLoadService.LevelUnloaded += Clean;
         }
@@ -25,7 +26,6 @@ namespace Snake_box
         private void Initialize()
         {
             _gameActive = true;
-            _controllers = new Controllers();
             Initialization();
             ScreenInterface.GetInstance().Execute(ScreenType.GameMenu);
         }

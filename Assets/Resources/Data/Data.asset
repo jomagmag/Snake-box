@@ -32,13 +32,15 @@ MonoBehaviour:
   _turretDataPath: Turret/TurretData
   _borderDataPath: Level/BordersData
   _blockSnakeDataPath: BlockSnake/BlockSnakeData
-  _bonusCoinsDataPath: Bonus/BonusCoinsData
-  _bonusHpSnakeDataPath: Bonus/BonusHpSnakeData
-  _bonusSpeedDataPath: Bonus/BonusSpeedData
-  _bonusFireDataPath: Bonus/BonusFireData
   _shellDataPath: Shells/ShellData
   _bordersDataPath: Level/BordersData
-  _allSpawnListsDataPath: EnemySpawn/AllSpawnListsData
   _spriteDictionaryDataPath: Sprites/SpriteDictionary
   _TrapListDataPath: Traps/TrapsList
+  _TurredBonusDataPath: Bonus/TurretBonusData
+  _BombBonusDataPath: Bonus/BombBonusData
+  _RapidFireBonusDataPath: Bonus/RapidFireBonusData
+  _HealBonusDataPath: Bonus/HealBonusData
+  _allSpawnListsDataPath: EnemySpawn/AllSpawnListsData
   _levelPrefabsDataPath: Level/LevelPrefabs
+  _WaveSettingsDataPath: EnemySpawn/WaveSettingsData
+  _EnemySpawnSettingsDataPath: EnemySpawn/EnemySpawnSettingsData

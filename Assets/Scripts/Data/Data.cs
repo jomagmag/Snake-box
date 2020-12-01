@@ -31,22 +31,20 @@ namespace Snake_box
         [SerializeField] private string _turretDataPath;
         [SerializeField] private string _borderDataPath;
         [SerializeField] private string _blockSnakeDataPath;
-        [SerializeField] private string _bonusCoinsDataPath;
-        [SerializeField] private string _bonusHpSnakeDataPath;
-        [SerializeField] private string _bonusSpeedDataPath;
-        [SerializeField] private string _bonusFireDataPath;
         [SerializeField] private string _shellDataPath;
         [SerializeField] private string _bordersDataPath;
-        [SerializeField] private string _allSpawnListsDataPath;
         [SerializeField] private string _spriteDictionaryDataPath;
         [SerializeField] private string _TrapListDataPath;
+        [SerializeField] private string _TurredBonusDataPath;
+        [SerializeField] private string _BombBonusDataPath;
+        [SerializeField] private string _RapidFireBonusDataPath;
+        [SerializeField] private string _HealBonusDataPath;
+        [SerializeField] private string _allSpawnListsDataPath;
+        [SerializeField] private string _levelPrefabsDataPath;
+        [SerializeField] private string _WaveSettingsDataPath;
+        [SerializeField] private string _EnemySpawnSettingsDataPath;
         private static MainBuildData _mainBuildData;
         private static PointerData _pointerData;
-        private static BonusCoinsData _bonusCoinsData;
-        private static BonusFireData _bonusFireData;
-        private static BonusHpSnakeData _bonusHpSnakeData;
-        private static BonusSpeedData _bonusSpeedData;
-        [SerializeField] private string _levelPrefabsDataPath;
         private static ShakesData _shake;
         private static CharacterData _characterData;
         private static SimpleEnemyData _simpleEnemyData;
@@ -65,6 +63,12 @@ namespace Snake_box
         private static ShellData _shellData;
         private static SpriteDictionary _spriteDictonary;
         private static TrapList _trapList;
+        private static TurretBonusData _turretBonusData;
+        private static RapidFireBonusData _rapidFireBonusData;
+        private static HealBonusData _healBonusData;
+        private static BombBonusData _bombBonusData;
+        private static WaveSettingsData _waveSettingsData;
+        private static EnemySpawnSettingsData _enemySpawnSettingsData;
         private static readonly Lazy<Data> _instance = new Lazy<Data>(() => Load<Data>("Data/" + typeof(Data).Name));
         
         #endregion
@@ -110,57 +114,56 @@ namespace Snake_box
                 return _pointerData;
             }
         }
-
-        public BonusFireData BonusFireData
-        {
-
-            get
-            {
-                if (_bonusFireData == null)
-                {
-                    _bonusFireData = Load<BonusFireData>("Data/" + Instance._bonusFireDataPath);
-                }
-
-                return _bonusFireData;
-            }
-        } 
-
-        public BonusCoinsData BonusCoinsData
+        
+        public TurretBonusData TurretBonusData
         {
             get
             {
-                if (_bonusCoinsData == null)
+                if (_turretBonusData == null)
                 {
-                    _bonusCoinsData = Load<BonusCoinsData>("Data/" + Instance._bonusCoinsDataPath);
+                    _turretBonusData = Load<TurretBonusData>("Data/" + Instance._TurredBonusDataPath);
                 }
 
-                return _bonusCoinsData;
+                return _turretBonusData;
             }
         }
-
-        public BonusHpSnakeData BonusHpSnakeData
+        
+        public BombBonusData BombBonusData
         {
             get
             {
-                if (_bonusHpSnakeData == null)
+                if (_bombBonusData == null)
                 {
-                    _bonusHpSnakeData = Load<BonusHpSnakeData>("Data/" + Instance._bonusHpSnakeDataPath);
+                    _bombBonusData = Load<BombBonusData>("Data/" + Instance._BombBonusDataPath);
                 }
 
-                return _bonusHpSnakeData;
+                return _bombBonusData;
             }
         }
-
-        public BonusSpeedData BonusSpeedData
+        
+        public RapidFireBonusData RapidFireBonusData
         {
             get
             {
-                if (_bonusSpeedData == null)
+                if (_rapidFireBonusData == null)
                 {
-                    _bonusSpeedData = Load<BonusSpeedData>("Data/" + Instance._bonusSpeedDataPath);
+                    _rapidFireBonusData = Load<RapidFireBonusData>("Data/" + Instance._RapidFireBonusDataPath);
                 }
 
-                return _bonusSpeedData;
+                return _rapidFireBonusData;
+            }
+        }
+        
+        public HealBonusData HealBonusData
+        {
+            get
+            {
+                if (_healBonusData == null)
+                {
+                    _healBonusData = Load<HealBonusData>("Data/" + Instance._HealBonusDataPath);
+                }
+
+                return _healBonusData;
             }
         }
 
@@ -391,6 +394,34 @@ namespace Snake_box
                 return _trapList;
             }
         }
+
+
+        public WaveSettingsData WaveSettingsData
+        {
+            get
+            {
+                if (_waveSettingsData == null)
+                {
+                    _waveSettingsData = Load<WaveSettingsData>("Data/" + Instance._WaveSettingsDataPath);
+                }
+
+                return _waveSettingsData;
+            }
+        }
+
+        public EnemySpawnSettingsData EnemySpawnSettingsData
+        {
+            get
+            {
+                if (_enemySpawnSettingsData == null)
+                {
+                    _enemySpawnSettingsData = Load<EnemySpawnSettingsData>("Data/" + Instance._EnemySpawnSettingsDataPath);
+                }
+
+                return _enemySpawnSettingsData;
+            }
+        }
+
 
 
         #endregion

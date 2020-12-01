@@ -8,6 +8,37 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="CameraForMovie.cs" t="Include" />
+        <e p="JMO Assets" t="Include">
+          <e p="Cartoon FX" t="Include">
+            <e p="CartoonFX Free.txt" t="Include" />
+            <e p="Demo" t="Include">
+              <e p="Assets" t="Include">
+                <e p="CFX_AutoStopLoopedEffect.cs" t="Include" />
+                <e p="CFX_Demo_New.cs" t="Include" />
+                <e p="CFX_Demo_RandomDir.cs" t="Include" />
+                <e p="CFX_Demo_RandomDirectionTranslate.cs" t="Include" />
+                <e p="CFX_Demo_RotateCamera.cs" t="Include" />
+                <e p="CFX_Demo_Translate.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="CFX_AutoDestructShuriken.cs" t="Include" />
+              <e p="CFX_AutoRotate.cs" t="Include" />
+              <e p="CFX_LightFlicker.cs" t="Include" />
+              <e p="CFX_LightIntensityFade.cs" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="CFX3 Multiply Color.shader" t="Include" />
+              <e p="CFXM_MobileParticleAdd_Alpha8.shader" t="Include" />
+            </e>
+          </e>
+          <e p="Cartoon FX Easy Editor" t="Include">
+            <e p="CartoonFX Easy Editor Readme.txt" t="Include" />
+            <e p="Editor" t="Include">
+              <e p="CFXEasyEditor.cs" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="MeshBaker" t="Include">
           <e p="Editor" t="Include">
             <e p="core" t="Include">
@@ -242,8 +273,7 @@
             <e p="AssetsPathScreen.cs" t="Include" />
           </e>
           <e p="Controllers" t="Include">
-            <e p="BonusFireController.cs" t="Include" />
-            <e p="BonusSpawnController.cs" t="Include" />
+            <e p="BonusController.cs" t="Include" />
             <e p="CharacterController.cs" t="Include" />
             <e p="Controllers.cs" t="Include" />
             <e p="EnemyController.cs" t="Include" />
@@ -272,13 +302,11 @@
               <e p="BlockSnakeData.cs" t="Include" />
             </e>
             <e p="Bonus" t="Include">
-              <e p="BonusCoinsData.cs" t="Include" />
+              <e p="BombBonusData.cs" t="Include" />
               <e p="BonusData.cs" t="Include" />
-              <e p="BonusFireData.cs" t="Include" />
-              <e p="BonusHpSnakeData.cs" t="Include" />
-              <e p="BonusSpeedData.cs" t="Include" />
-              <e p="NewBehaviourScript.cs" t="Include" />
-              <e p="NewBehaviourScript1.cs" t="Include" />
+              <e p="HealBonusData.cs" t="Include" />
+              <e p="RapidFireBonusData.cs" t="Include" />
+              <e p="TurretBonusData.cs" t="Include" />
             </e>
             <e p="Character" t="Include">
               <e p="CharacterData.cs" t="Include" />
@@ -298,7 +326,9 @@
             </e>
             <e p="EnemySpawn" t="Include">
               <e p="EnemySpawnList.cs" t="Include" />
+              <e p="EnemySpawnSettingsData.cs" t="Include" />
               <e p="SingleEnemySpawnData.cs" t="Include" />
+              <e p="WaveSettingsData.cs" t="Include" />
             </e>
             <e p="Enviroment" t="Include">
               <e p="BaseTrapsData.cs" t="Include" />
@@ -381,6 +411,8 @@
             </e>
             <e p="Struct" t="Include">
               <e p="EnemyCount.cs" t="Include" />
+              <e p="SubWave.cs" t="Include" />
+              <e p="Wave.cs" t="Include" />
             </e>
           </e>
           <e p="Model" t="Include">
@@ -389,12 +421,10 @@
             </e>
             <e p="Bonus" t="Include">
               <e p="BaseBonus.cs" t="Include" />
-              <e p="BonusBullet.cs" t="Include" />
-              <e p="BonusCoins.cs" t="Include" />
-              <e p="BonusFire.cs" t="Include" />
-              <e p="BonusHpSnake.cs" t="Include" />
-              <e p="BonusList.cs" t="Include" />
-              <e p="BonusSpeed.cs" t="Include" />
+              <e p="BombBonus.cs" t="Include" />
+              <e p="HealBonus.cs" t="Include" />
+              <e p="RapidFireBonus.cs" t="Include" />
+              <e p="TurretBonus.cs" t="Include" />
             </e>
             <e p="Character" t="Include">
               <e p="BaseCharacter.cs" t="Include" />
@@ -484,6 +514,9 @@
           <e p="Services" t="Include">
             <e p="CameraService" t="Include">
               <e p="CameraServices.cs" t="Include" />
+            </e>
+            <e p="EventService" t="Include">
+              <e p="EventService.cs" t="Include" />
             </e>
             <e p="FlyingIconsService.cs" t="Include" />
             <e p="InputService" t="Include">

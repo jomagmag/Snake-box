@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
@@ -14,23 +15,36 @@ namespace Snake_box
         [SerializeField] private GameObject _panelTurretsType;
         [SerializeField] private GameObject _panelPause;
         [SerializeField] private Sprite _spriteBlock;
-        [SerializeField] private Button _headSnake; 
+        [SerializeField] private Button _headSnake;
         [SerializeField] private Button _pause;
         [SerializeField] private Button _mainMenu;
         [SerializeField] private Button _reset;
         [SerializeField] private Button _hpBar;
         [SerializeField] private Button _forceFieldBar;
-        [SerializeField] private Button [] _buttonPlus;
+        [SerializeField] private Button[] _buttonPlus;
         [SerializeField] private Button[] _buttonTurretsType;
         [SerializeField] private Text _textEndGame;
-        CharacterBehaviour _characterBehaviour = Services.Instance.LevelService.CharacterBehaviour;
+        [SerializeField] private Text _wave;
+        private LevelService _service;
+        private EventService _eventService;
+        private CharacterBehaviour _characterBehaviour;
         private int _selectButtonsIndex;
         private bool _isPause;
+        private bool levelStarted;
 
         #endregion
-      
+
 
         #region UnityMethods
+
+        private void Awake()
+        {
+            _service = Services.Instance.LevelService;
+            _eventService = Services.Instance.EventService;
+            Services.Instance.LevelLoadService.LevelLoaded += LeveStarted;
+            _eventService.LevelUnLoaded += LevelEnded;
+            _wave.text = "Wave " + _service.CurrentWave + 1 + " Mobs " + _service.ActiveEnemies.Count;
+        }
 
         //private void OnEnable()
         //{
@@ -64,22 +78,28 @@ namespace Snake_box
         //    _pause.onClick.RemoveListener(Pause);
         //}
 
-        //private void Update()
-        //{
-        //    _worldCoins.GetComponent<TextMeshProUGUI>().text = Wallet.CountWorldCoins().ToString();
-        //    _localCoins.GetComponent<TextMeshProUGUI>().text = Wallet.CountLocalCoins().ToString();
-        //    //Bar.ShowCount(_hpBar, _characterBehaviour.CurrentSnakeHp, _characterBehaviour.BaseSnakeHp, Color.green, Color.red);
-        //    //Bar.ShowCount(_forceFieldBar, _characterBehaviour.CurrentSnakeArmor, _characterBehaviour.BaseSnakeArmor, Color.blue, Color.yellow);
-        //}
+        private void Update()
+        {
+            //    _worldCoins.GetComponent<TextMeshProUGUI>().text = Wallet.CountWorldCoins().ToString();
+            //    _localCoins.GetComponent<TextMeshProUGUI>().text = Wallet.CountLocalCoins().ToString();
+            //    //Bar.ShowCount(_hpBar, _characterBehaviour.CurrentSnakeHp, _characterBehaviour.BaseSnakeHp, Color.green, Color.red);
+            //    //Bar.ShowCount(_forceFieldBar, _characterBehaviour.CurrentSnakeArmor, _characterBehaviour.BaseSnakeArmor, Color.blue, Color.yellow);
+            
+            
+            if (levelStarted)
+            {
+                _wave.text = "Wave " + (_service.CurrentWave + 1) + " Mobs " + _service.ActiveEnemies.Count;
+            }
+        }
 
         #endregion
 
 
-        #region Methods  
+        #region Methods
 
         private void SnakeHeadButton()
         {
-            _characterBehaviour.UseBonus();
+            //_characterBehaviour.UseBonus();
         }
 
         private void AddTurret(int i)
@@ -89,13 +109,15 @@ namespace Snake_box
             _panelTurretsType.SetActive(false);
         }
 
-        private void ChangeSprite(int numberButton)//меняем спрайт плюса на спрайт блока и активируем след кнопку плусик
+        private void
+            ChangeSprite(int numberButton) //меняем спрайт плюса на спрайт блока и активируем след кнопку плусик
         {
-            if (_buttonPlus.Length > numberButton+1)
+            if (_buttonPlus.Length > numberButton + 1)
             {
-             _buttonPlus[numberButton + 1].interactable = true;// включаем след. кнопку
+                _buttonPlus[numberButton + 1].interactable = true; // включаем след. кнопку
             }
-            _buttonPlus[numberButton].image.sprite = _spriteBlock;// меняем спрайт плюса на спрайт блока    
+
+            _buttonPlus[numberButton].image.sprite = _spriteBlock; // меняем спрайт плюса на спрайт блока    
             //_characterBehaviour.AddBlock();
         }
 
@@ -115,9 +137,9 @@ namespace Snake_box
             }
         }
 
-        private void AddBlock(int numberButton)//метод добавления турели если его нет то  
+        private void AddBlock(int numberButton) //метод добавления турели если его нет то  
         {
-            if(_characterBehaviour == null)
+            if (_characterBehaviour == null)
                 _characterBehaviour = Services.Instance.LevelService.CharacterBehaviour;
             //if (_characterBehaviour.GetBlock(numberButton)!=null)// если есть блок то активируем панель для выбопв турели
             //{
@@ -141,15 +163,18 @@ namespace Snake_box
 
         public void GetEndLevelText()
         {
-            _pause.interactable = false;      
-            if (Services.Instance.LevelService.IsTargetDestroed==true || Services.Instance.LevelService.IsSnakeAlive==false)
+            _pause.interactable = false;
+            if (Services.Instance.LevelService.IsTargetDestroed == true ||
+                Services.Instance.LevelService.IsSnakeAlive == false)
             {
-                _textEndGame.text = "Congratulations!You Loser!";               
+                _textEndGame.text = "Congratulations!You Loser!";
             }
+
             if (Services.Instance.LevelService.ActiveEnemies.Count <= 0)
-            {                
-                _textEndGame.text = "Congratulations!";               
+            {
+                _textEndGame.text = "Congratulations!";
             }
+
             Services.Instance.TimeService.SetTimeScale(0);
         }
 
@@ -163,7 +188,16 @@ namespace Snake_box
                 panel.GetComponentInParent<GameMenuBehaviour>().GetEndLevelText();
         }
 
-        #endregion
+        private void LeveStarted()
+        {
+            levelStarted = true;
+        }
 
+        private void LevelEnded()
+        {
+            levelStarted = false;
+        }
+
+        #endregion
     }
 }

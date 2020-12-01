@@ -45,7 +45,7 @@ MonoBehaviour:
     StartLevel: 1
     BaseLevelModifier: 2
     Range: 20
-    Cooldown: 432
+    Cooldown: 150
     UpdatePrice: 134
     BuyPrice: 134
     ThumbnailPrefab: {fileID: 269974265680797856, guid: 200f07bd5d78bcd4cb26d25e63b7b204,
@@ -103,7 +103,7 @@ MonoBehaviour:
     StartLevel: 1
     BaseLevelModifier: 2
     Range: 20
-    Cooldown: 402
+    Cooldown: 50
     UpdatePrice: 134
     BuyPrice: 134
     ThumbnailPrefab: {fileID: 269974265680797856, guid: 200f07bd5d78bcd4cb26d25e63b7b204,
@@ -184,7 +184,7 @@ MonoBehaviour:
     StartLevel: 1
     BaseLevelModifier: 2
     Range: 25
-    Cooldown: 300
+    Cooldown: 80
     UpdatePrice: 134
     BuyPrice: 134
     ThumbnailPrefab: {fileID: 269974265680797856, guid: 200f07bd5d78bcd4cb26d25e63b7b204,
@@ -195,9 +195,10 @@ MonoBehaviour:
     ArmorPiercing: 0
     FirePointHierarchy: TurretShift/FirePoint
     ProjectilePreferences:
-      ProjectilePrefab: {fileID: 1236643204216662, guid: b5893ddde8673d14fad9a114e860d565,
+      ProjectilePrefab: {fileID: 7796823075655074970, guid: d2acf189c27fbf84da2a3ee39888728c,
         type: 3}
-      ShootingVfxPrefab: {fileID: 0}
+      ShootingVfxPrefab: {fileID: 1082066010221984, guid: 9611df09c312972469be124a7e439716,
+        type: 3}
       ProjectileSpeed: 2
       ProjectileDamage: 10
       ProjectileFollowsTarget: 1

@@ -16,3 +16,4 @@ MonoBehaviour:
   - _enemyType: 1
     _spawnTiming: 1
     _spawnPointId: 0
+  BonusChance: 50

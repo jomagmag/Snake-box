@@ -6985,7 +6985,7 @@ GameObject:
   - component: {fileID: 6714696576301832822}
   m_Layer: 0
   m_Name: Zombie_HotDogSuit_Male_02
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7087,7 +7087,7 @@ NavMeshAgent:
   m_Speed: 20
   m_Acceleration: Infinity
   avoidancePriority: 50
-  m_AngularSpeed: 10
+  m_AngularSpeed: 100
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
