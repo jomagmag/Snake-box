@@ -65,6 +65,11 @@ namespace Snake_box
                     _pointsTurret.Enqueue(points);
                 }
             }
+            var point = GetPoint();
+            if (point != null)
+            {
+                Data.Instance.TurretData.AddNewWithParent(point);
+            }  
 
             CameraForMovie.Turn += InputMove;
         }
