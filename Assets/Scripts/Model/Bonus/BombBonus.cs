@@ -1,3 +1,5 @@
+using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
@@ -17,7 +19,7 @@ namespace Snake_box
         private bool usePartricle;
 
         #endregion
-        
+
         public BombBonus(BombBonusData BonusData) : base(BonusData)
         {
             particle = BonusData.particle;
@@ -25,31 +27,35 @@ namespace Snake_box
             _damage = BonusData.explosionDamage;
             _radius = BonusData.explosionRadius;
             usePartricle = BonusData.UseParticle;
-            _particleTimer = new TimeRemaining(ParticleDestroy,_effectTimer);
+            _particleTimer = new TimeRemaining(ParticleDestroy, _effectTimer);
         }
 
         public override void Use()
         {
-
             int count = 0;
-            
+
             for (int i = 0; i < _levelService.ActiveEnemies.Count; i++)
             {
                 if (_levelService.ActiveEnemies[i].GetTransform().position
-                        .CalcDistance(_gameObject.transform.position) < _radius)
+                        .CalcDistance(_gameObject.transform.position) < _radius*_radius)
                 {
                     count++;
-                    var enemy = _levelService.ActiveEnemies[i] as BaseEnemy;
-                    if (enemy != null) enemy.RegisterDamage(_damage, ArmorTypes.None);
+                    if (_levelService.ActiveEnemies[i] is IDamageAddressee enemy)
+                    {
+                        enemy.RegisterDamage(_damage, ArmorTypes.None);
+                    }
                 }
             }
+
+            Debug.Log(count);
 
             if (usePartricle)
             {
                 Services.Instance.LevelService.ActiveBonus.Remove(this);
-                particleObject = GameObject.Instantiate(particle,_gameObject.transform.position,Quaternion.identity);
+                particleObject = GameObject.Instantiate(particle, _gameObject.transform.position, Quaternion.identity);
                 _particleTimer.AddTimeRemaining();
             }
+
             base.Use();
         }
 

@@ -84,10 +84,9 @@ namespace Snake_box
             //    _localCoins.GetComponent<TextMeshProUGUI>().text = Wallet.CountLocalCoins().ToString();
             //    //Bar.ShowCount(_hpBar, _characterBehaviour.CurrentSnakeHp, _characterBehaviour.BaseSnakeHp, Color.green, Color.red);
             //    //Bar.ShowCount(_forceFieldBar, _characterBehaviour.CurrentSnakeArmor, _characterBehaviour.BaseSnakeArmor, Color.blue, Color.yellow);
-
-            Debug.Log(levelStarted);
             
-            if (true)
+            
+            if (levelStarted)
             {
                 _wave.text = "Wave " + _service.CurrentWave + 1 + " Mobs " + _service.ActiveEnemies.Count;
             }
