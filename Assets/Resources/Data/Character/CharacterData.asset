@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715a66ab18a45af42876cd750d982751, type: 3}
   m_Name: CharacterData
   m_EditorClassIdentifier: 
-  Hp: 300
+  Hp: 30000
   Armor: 100
   RegenerationArmor: 1
   SpeedRotation: 8.43

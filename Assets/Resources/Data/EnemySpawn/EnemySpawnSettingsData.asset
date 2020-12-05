@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemySettings:
   - EnemyType: 1
-    EnemySpawnCost: 10
-    EnemyWeight: 10
+    EnemySpawnCost: 20
+    EnemyWeight: 12
     EnemyMinWave: 0
   - EnemyType: 2
-    EnemySpawnCost: 10
-    EnemyWeight: 10
+    EnemySpawnCost: 25
+    EnemyWeight: 8
     EnemyMinWave: 0

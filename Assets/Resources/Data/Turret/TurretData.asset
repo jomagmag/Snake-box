@@ -329,7 +329,7 @@ MonoBehaviour:
       ProjectilePrefab: {fileID: 0}
       ShootingVfxPrefab: {fileID: 0}
       ProjectileSpeed: 50
-      ProjectileDamage: 10
+      ProjectileDamage: 40
       ProjectileFollowsTarget: 1
       AngleLock: {x: 90, y: 0, z: 0}
       ArmorPiercing: 0

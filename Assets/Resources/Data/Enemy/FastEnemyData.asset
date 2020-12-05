@@ -15,7 +15,8 @@ MonoBehaviour:
   ArmorType: 0
   Prefab: {fileID: 1343261146546640, guid: abb9b84951e80c14daf2598e36d04909, type: 3}
   Hp: 8
-  Speed: 2
+  HpBonusPerWave: 0
+  Speed: 4
   Damage: 4
   SizePack: 0
   PackValue: 0
